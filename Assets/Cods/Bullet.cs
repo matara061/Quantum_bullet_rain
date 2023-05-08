@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletHellSpawner : MonoBehaviour
+public class Bullet : MonoBehaviour // player tem que atirar so para frente
 {
     public int numer_of_columns;
     public float speed;
@@ -14,10 +14,8 @@ public class BulletHellSpawner : MonoBehaviour
     public float angle;
     public float delay;
     public Material material;
-    public float spin_speed;
-    private float time;
-
-    // colocar varios geradores de particulas em um objeto para ter diferentes tipos de ataques 
+   
+ 
 
     public ParticleSystem system;
 
@@ -28,16 +26,14 @@ public class BulletHellSpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        time += Time.fixedDeltaTime;
 
-        transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
     }
 
     void Summon()
     {
-        angle = 360f / numer_of_columns;
+        angle = 90f / numer_of_columns;
 
-        for (int i = 0; i < numer_of_columns; i++)
+        for (int i = 0; i < numer_of_columns; i++) // vou usar as colunas nos especiais 
         {
             // A simple particle material with no texture.
             Material particleMaterial = material;
@@ -55,11 +51,9 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.startSpeed = speed;
             mainModule.startDelay = delay; // nao funciona
             mainModule.maxParticles = 10000;
-            //mainModule.duration = 0f;
-            mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = system.emission;
-            emission.enabled = false; 
+            emission.enabled = false;
 
             var forma = system.shape;
             forma.enabled = true;
