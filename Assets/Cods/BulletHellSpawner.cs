@@ -13,14 +13,23 @@ public class BulletHellSpawner : MonoBehaviour
     public float size;
     public float angle;
     public Material material;
+    public float spin_speed;
+    private float time;
 
-
+    // colocar varios geradores de particulas em um objeto para ter diferentes tipos de ataques 
 
     public ParticleSystem system;
 
     private void Awake()
     {
         Summon();
+    }
+
+    private void FixedUpdate()
+    {
+        time += Time.fixedDeltaTime;
+
+        transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
     }
 
     void Summon()
@@ -43,9 +52,12 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.startColor = Color.green;
             mainModule.startSize = 0.5f;
             mainModule.startSpeed = speed;
+            mainModule.maxParticles = 10000;
+            //mainModule.duration = 0f;
+            mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = system.emission;
-            emission.enabled = false; // meio que n funciona
+            emission.enabled = false; 
 
             var forma = system.shape;
             forma.enabled = true;
