@@ -70,6 +70,12 @@ public class BulletHellSpawner : MonoBehaviour
             text.enabled = true;
             text.mode = ParticleSystemAnimationMode.Sprites;
             text.AddSprite(texture);
+
+            var collision = system.collision;
+            collision.enabled = true;
+            collision.type = ParticleSystemCollisionType.World;
+            collision.mode = ParticleSystemCollisionMode.Collision2D;
+            collision.collidesWith = LayerMask.GetMask("Player");
         }
 
         // Every 2 secs we will emit.

@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour // player tem que atirar so para frente
 
             // Create a green Particle System.
             var go = new GameObject("Particle System");
-            go.transform.Rotate(angle * i, 90, 0); // Rotate so the system emits upwards.
+            go.transform.Rotate(-90, 0, 0); // Rotate so the system emits upwards. angle * i, 90, 0
             go.transform.parent = this.transform;
             go.transform.position = this.transform.position;
             system = go.AddComponent<ParticleSystem>();

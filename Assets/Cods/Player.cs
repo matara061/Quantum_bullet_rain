@@ -26,6 +26,11 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
+
     public void special()
     {
 
