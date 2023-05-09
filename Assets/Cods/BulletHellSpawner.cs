@@ -17,13 +17,15 @@ public class BulletHellSpawner : MonoBehaviour
     public float spin_speed;
     private float time;
 
+
     // colocar varios geradores de particulas em um objeto para ter diferentes tipos de ataques 
 
     public ParticleSystem system;
 
     private void Awake()
     {
-        Summon();
+
+            Summon();
     }
 
     private void FixedUpdate()
@@ -35,8 +37,6 @@ public class BulletHellSpawner : MonoBehaviour
 
     void Summon()
     {
-        int LayerDam = LayerMask.NameToLayer("BulletB");
-        gameObject.layer = LayerDam;
         angle = 360f / numer_of_columns;
 
         for (int i = 0; i < numer_of_columns; i++)
@@ -50,12 +50,13 @@ public class BulletHellSpawner : MonoBehaviour
             go.transform.parent = this.transform;
             go.transform.position = this.transform.position;
             system = go.AddComponent<ParticleSystem>();
+           // system.Stop();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             var mainModule = system.main;
             mainModule.startColor = Color.green;
             mainModule.startSize = 0.5f;
             mainModule.startSpeed = speed;
-            mainModule.startDelay = delay; // nao funciona
+            mainModule.startDelay = delay; // nao funciona, talvez criar outro script e desativar esse cod pelo tempo de delay
             mainModule.maxParticles = 10000;
             //mainModule.duration = 0f;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
@@ -78,6 +79,7 @@ public class BulletHellSpawner : MonoBehaviour
             collision.type = ParticleSystemCollisionType.World;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = LayerMask.GetMask("Player");
+            collision.lifetimeLoss = lifetime;
             collision.sendCollisionMessages = true;
         }
 

@@ -32,8 +32,6 @@ public class Bullet : MonoBehaviour // player tem que atirar so para frente
 
     void Summon()
     {
-       /* int LayerDam = LayerMask.NameToLayer("BulletP");
-        gameObject.layer = LayerDam;*/
 
         angle = 90f / numer_of_columns;
 
@@ -74,6 +72,7 @@ public class Bullet : MonoBehaviour // player tem que atirar so para frente
             collision.type = ParticleSystemCollisionType.World;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = LayerMask.GetMask("Inimigo");
+            collision.lifetimeLoss = lifetime;
             collision.sendCollisionMessages = true;
         }
 
