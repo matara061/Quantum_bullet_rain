@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour // player tem que atirar so para frente
     public float angle;
     public float delay;
     public Material material;
+
    
  
 
@@ -31,6 +32,9 @@ public class Bullet : MonoBehaviour // player tem que atirar so para frente
 
     void Summon()
     {
+       /* int LayerDam = LayerMask.NameToLayer("BulletP");
+        gameObject.layer = LayerDam;*/
+
         angle = 90f / numer_of_columns;
 
         for (int i = 0; i < numer_of_columns; i++) // vou usar as colunas nos especiais 
@@ -64,6 +68,13 @@ public class Bullet : MonoBehaviour // player tem que atirar so para frente
             text.enabled = true;
             text.mode = ParticleSystemAnimationMode.Sprites;
             text.AddSprite(texture);
+
+            var collision = system.collision;
+            collision.enabled = true;
+            collision.type = ParticleSystemCollisionType.World;
+            collision.mode = ParticleSystemCollisionMode.Collision2D;
+            collision.collidesWith = LayerMask.GetMask("Inimigo");
+            collision.sendCollisionMessages = true;
         }
 
         // Every 2 secs we will emit.

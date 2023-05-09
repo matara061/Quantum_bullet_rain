@@ -24,11 +24,22 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         float moveVertical = Input.GetAxis("Vertical");
 
         rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+
+        if (life <= 0)
+        {
+            Death();
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnParticleCollision(GameObject other)
     {
-        
+        Debug.Log("particle");
+        life--;
+    }
+
+    private void Death()
+    {
+       // Debug.Log("morreu");
     }
 
     public void special()

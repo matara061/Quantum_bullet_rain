@@ -30,6 +30,11 @@ public class Bot1 : MonoBehaviour
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Hit");
+    }
+
     public void Padrao1()
     {
         ataques[0].gameObject.SetActive(true); // ver como add um tempo para o proximo ataque (talvez configurar isso no spawner)

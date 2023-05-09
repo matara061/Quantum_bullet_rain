@@ -35,6 +35,8 @@ public class BulletHellSpawner : MonoBehaviour
 
     void Summon()
     {
+        int LayerDam = LayerMask.NameToLayer("BulletB");
+        gameObject.layer = LayerDam;
         angle = 360f / numer_of_columns;
 
         for (int i = 0; i < numer_of_columns; i++)
@@ -76,6 +78,7 @@ public class BulletHellSpawner : MonoBehaviour
             collision.type = ParticleSystemCollisionType.World;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = LayerMask.GetMask("Player");
+            collision.sendCollisionMessages = true;
         }
 
         // Every 2 secs we will emit.
