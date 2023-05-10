@@ -7,6 +7,10 @@ public class Bot1 : MonoBehaviour
     public float life = 1000;
     public float speed;
     private float dam = 2.5f;
+
+    public float timeCount;
+    public bool timeOver;
+
     public GameObject[] ataques;
 
     // Start is called before the first frame update
@@ -18,17 +22,23 @@ public class Bot1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 800 & life > 500)
+        if (life <= 1000 & life > 900) // quando desativa o objetos todas as particulas desaparecem de uma vez 
         {
-            Padrao1();
+            ataques[0].gameObject.SetActive(true);
         }
-        else if (life <= 500 & life > 250)
+        else if (life <= 900 & life > 750)
         {
-            Padrao2();
+            ataques[1].gameObject.SetActive(true);
         }
-        else if (life <= 250 & life > 0)
+        else if (life <= 750 & life > 550)
         {
-            Padrao3();
+            ataques[0].gameObject.SetActive(false);
+            ataques[1].gameObject.SetActive(false);
+            ataques[2].gameObject.SetActive(true);
+        }else if (life <= 550 & life > 400)
+        {
+            ataques[0].gameObject.SetActive(true);
+            ataques[3].gameObject.SetActive(true);
         }
 
         if (life <= 0)
@@ -66,5 +76,23 @@ public class Bot1 : MonoBehaviour
     public void Padrao3()
     {
 
+    }
+
+    void TimeCount()
+    {
+        timeOver = false;
+
+        if (!timeOver && timeCount > 0)
+        {
+            timeCount -= Time.deltaTime;
+
+            if (timeCount < 0)
+            {
+                timeCount = 0;
+                
+                timeOver = true;
+                
+            }
+        }
     }
 }

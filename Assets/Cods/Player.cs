@@ -26,7 +26,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveHorizontal = Input.GetAxis("Horizontal"); // tempo de resposta muito baixo
         float moveVertical = Input.GetAxis("Vertical");
 
         rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
