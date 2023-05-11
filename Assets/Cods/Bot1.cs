@@ -6,7 +6,7 @@ public class Bot1 : MonoBehaviour
 {
     public float life = 1000;
     public float speed;
-    private float dam = 2.5f;
+    private float dam = 1.2f;
 
     public float timeCount;
     public bool timeOver;
@@ -35,9 +35,11 @@ public class Bot1 : MonoBehaviour
             ataques[0].gameObject.SetActive(false);
             ataques[1].gameObject.SetActive(false);
             ataques[2].gameObject.SetActive(true);
-        }else if (life <= 550 & life > 400)
+            ataques[4].gameObject.SetActive(true);
+        }
+        else if (life <= 550 & life > 400)
         {
-            ataques[0].gameObject.SetActive(true);
+            ataques[5].gameObject.SetActive(true);
             ataques[3].gameObject.SetActive(true);
         }
 

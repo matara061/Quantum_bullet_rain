@@ -13,23 +13,24 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public bool timeOver;
 
     private Rigidbody2D rb2d;
-    private BoxCollider2D col;
+   // private BoxCollider2D col;
+    private CircleCollider2D col;
 
     public Bullet bullet; // vou ter que criar outro codigo do BulletSpawner por causa do "mainModule.simulationSpace = ParticleSystemSimulationSpace.World;"
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        col = GetComponent<BoxCollider2D>();
+        col = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal"); // tempo de resposta muito baixo
+       /* float moveHorizontal = Input.GetAxis("Horizontal"); // tempo de resposta muito baixo
         float moveVertical = Input.GetAxis("Vertical");
 
-        rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
+        rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);*/
 
         if (life <= 0)
         {
@@ -39,6 +40,14 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             TimeCount();
 
         
+    }
+
+    private void FixedUpdate()
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal"); // tempo de resposta muito baixo
+        float moveVertical = Input.GetAxis("Vertical");
+
+        rb2d.velocity = new Vector2(moveHorizontal * speed, moveVertical * speed);
     }
 
     private void OnParticleCollision(GameObject other)
@@ -55,6 +64,11 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             
         }
         
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("collid");
     }
 
     void TimeCount()
