@@ -14,4 +14,9 @@ public class StartMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Desistir()
+    {
+        SceneManager.LoadScene("Start");
+    }
 }

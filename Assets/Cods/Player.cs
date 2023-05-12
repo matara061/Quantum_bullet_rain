@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour // player nao vai precisar clicar para atirar, vai automatico
 {
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     public float timeCount;   
     public bool timeOver;
+
+    public GameObject[] coracoes;
 
     private Rigidbody2D rb2d;
    // private BoxCollider2D col;
@@ -36,10 +39,19 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         {
             Death();
         }
-        else if (life > 0 && hit)
+        else if (life == 2 && hit) // life > 0
+        {
             TimeCount();
+            coracoes[0].gameObject.SetActive(false);
+        }
+        else if (life == 1 && hit) // life > 0
+        {
+            TimeCount();
+            coracoes[1].gameObject.SetActive(false);
+        }
 
-        
+
+
     }
 
     private void FixedUpdate()
@@ -91,7 +103,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     private void Death()
     {
-       // Debug.Log("morreu");
+        //SceneManager.LoadScene("GameOver");
+         //Debug.Log("morreu");
     }
 
     public void special()

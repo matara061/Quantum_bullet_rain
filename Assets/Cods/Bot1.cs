@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Bot1 : MonoBehaviour
 {
-    public float life = 1000;
+    public float life = 1000; //sobrevive +- 30 segundos acertando todos os tiros 
+    public float life2 = 1000;
+    public float life3 = 1000;
+    public float life4 = 1000;
+    public float life5 = 1000;
     public float speed;
     private float dam = 1.2f;
 
@@ -22,28 +26,35 @@ public class Bot1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (life <= 1000 & life > 900) // quando desativa o objetos todas as particulas desaparecem de uma vez 
+
+        if (life > 0)
         {
-            ataques[0].gameObject.SetActive(true);
-        }
-        else if (life <= 900 & life > 750)
+            if (life <= 1000 & life > 900) // quando desativa o objetos todas as particulas desaparecem de uma vez 
+            {
+                ataques[0].gameObject.SetActive(true);
+            }
+            else if (life <= 900 & life > 750)
+            {
+                ataques[1].gameObject.SetActive(true);
+            }
+            else if (life <= 750 & life > 550)
+            {
+                ataques[0].gameObject.SetActive(false);
+                ataques[1].gameObject.SetActive(false);
+                ataques[2].gameObject.SetActive(true);
+                ataques[4].gameObject.SetActive(true);
+            }
+            else if (life <= 550 & life > 400)
+            {
+                ataques[5].gameObject.SetActive(true);
+                ataques[3].gameObject.SetActive(true);
+            }
+        }else if(life2 > 0)
         {
-            ataques[1].gameObject.SetActive(true);
-        }
-        else if (life <= 750 & life > 550)
-        {
-            ataques[0].gameObject.SetActive(false);
-            ataques[1].gameObject.SetActive(false);
-            ataques[2].gameObject.SetActive(true);
-            ataques[4].gameObject.SetActive(true);
-        }
-        else if (life <= 550 & life > 400)
-        {
-            ataques[5].gameObject.SetActive(true);
-            ataques[3].gameObject.SetActive(true);
+
         }
 
-        if (life <= 0)
+        if (life5 <= 0)
             Death();
     }
 
