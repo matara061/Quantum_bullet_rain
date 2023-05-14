@@ -18,13 +18,14 @@ public class BulletHellSpawner : MonoBehaviour
     public Material material;
     public float spin_speed;
     private float time;
+    
 
 
     // colocar varios geradores de particulas em um objeto para ter diferentes tipos de ataques 
 
-    public ParticleSystem system;
+    public ParticleSystem system; // talvez criar uma copia desse cod para mudar o formato do ataque 
 
-    private void Awake()
+    private void Awake()   
     {
 
             Summon();
@@ -62,7 +63,7 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.startSpeed = speed;
             mainModule.startDelay = delay; // nao funciona, talvez criar outro script e desativar esse cod pelo tempo de delay
             mainModule.maxParticles = 10000;
-            //mainModule.duration = 0f;
+           // mainModule.duration = 5f;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = system.emission;
@@ -88,7 +89,7 @@ public class BulletHellSpawner : MonoBehaviour
         }
 
         // Every 2 secs we will emit.
-        InvokeRepeating("DoEmit", 0f, firerate);
+        InvokeRepeating("DoEmit", delay, firerate);
     }
 
     void DoEmit()

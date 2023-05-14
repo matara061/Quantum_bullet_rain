@@ -17,6 +17,8 @@ public class Bot1 : MonoBehaviour
 
     public GameObject[] ataques;
 
+    public BulletHellSpawner hell;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,13 +31,13 @@ public class Bot1 : MonoBehaviour
 
         if (life > 0)
         {
-            if (life <= 1000 & life > 900) // quando desativa o objetos todas as particulas desaparecem de uma vez 
+            if (life <= 1000 & life > 900) // pouco tempo entre um padrao e outro  
             {
                 ataques[0].gameObject.SetActive(true);
             }
             else if (life <= 900 & life > 750)
             {
-                ataques[1].gameObject.SetActive(true);
+                 ataques[1].gameObject.SetActive(true);
             }
             else if (life <= 750 & life > 550)
             {
@@ -75,15 +77,26 @@ public class Bot1 : MonoBehaviour
 
     public void Padrao1()
     {
-        ataques[0].gameObject.SetActive(true); // ver como add um tempo para o proximo ataque (talvez configurar isso no spawner)
-        ataques[1].gameObject.SetActive(true);
+        hell.numer_of_columns = 50;
+        hell.speed = 5;
+        hell.speedAto = 0.5f;
+        hell.color = Color.red;
+        hell.lifetime = 10;
+        hell.firerate = 1;
+        hell.size = 0.2f;
+        hell.spin_speed = 10;
     }
 
     public void Padrao2() // add movimento do boss 
     {
-        ataques[0].gameObject.SetActive(false);
-        ataques[1].gameObject.SetActive(false);
-       // ataques[2].gameObject.SetActive(true);
+        hell.numer_of_columns = 15;
+        hell.speed = 5;
+        hell.speedAto = 0.5f;
+        hell.color = Color.blue;
+        hell.lifetime = 10;
+        hell.firerate = 0.2f;
+        hell.size = 0.2f;
+        hell.spin_speed = 25;
     }
 
     public void Padrao3()
