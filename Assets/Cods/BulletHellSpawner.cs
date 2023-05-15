@@ -18,29 +18,36 @@ public class BulletHellSpawner : MonoBehaviour
     public Material material;
     public float spin_speed;
     private float time;
+
+    ParticleSystem.Particle[] nParticles;
     
 
 
     // colocar varios geradores de particulas em um objeto para ter diferentes tipos de ataques 
 
-    public ParticleSystem system; // talvez criar uma copia desse cod para mudar o formato do ataque 
+    public ParticleSystem system; 
 
     private void Awake()   
     {
 
-            Summon();
+           Summon();
+    }
+
+    private void Update()
+    {
+       
     }
 
     private void FixedUpdate()
     {
         time += Time.fixedDeltaTime;
 
-        transform.rotation = Quaternion.Euler(0, 0, time * spin_speed);
+        transform.rotation = Quaternion.Euler(0, 0, time * spin_speed); // rotaciona 
     }
 
     void Summon()
     {
-        angle = 360f / numer_of_columns;
+        angle = 360f / numer_of_columns; // mudar esse 360 para fazer outros formatos 
 
         for (int i = 0; i < numer_of_columns; i++)
         {
@@ -61,7 +68,7 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.startSize = 0.5f;
             mainModule.simulationSpeed = speedAto; // n testado
             mainModule.startSpeed = speed;
-            mainModule.startDelay = delay; // nao funciona, talvez criar outro script e desativar esse cod pelo tempo de delay
+           // mainModule.startDelay = delay; // nao funciona, talvez criar outro script e desativar esse cod pelo tempo de delay
             mainModule.maxParticles = 10000;
            // mainModule.duration = 5f;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
@@ -106,4 +113,28 @@ public class BulletHellSpawner : MonoBehaviour
             system.Emit(emitParams, 10);
         }
     }
+
+    /*   private void LateUpdate()
+       {
+           InitializeIfNeeded();
+
+           int numParticlesAlive = system.GetParticles(nParticles);
+
+           for (int i = 0; i < numParticlesAlive; i++)
+           {
+               nParticles[i].velocity += Vector3.up * mDrift;
+               nParticles[i].color = Color.blue;
+           }
+
+           system.SetParticles(nParticles, numParticlesAlive);
+       }
+
+       void InitializeIfNeeded()
+       {
+           if (system == null)
+               system = GetComponent<ParticleSystem>();
+
+           if (nParticles == null || nParticles.Length < system.main.maxParticles)
+               nParticles = new ParticleSystem.Particle[system.main.maxParticles];
+       }*/
 }

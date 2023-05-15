@@ -12,12 +12,10 @@ public class Bot1 : MonoBehaviour
     public float speed;
     private float dam = 1.2f;
 
-    public float timeCount;
-    public bool timeOver;
-
     public GameObject[] ataques;
 
     public BulletHellSpawner hell;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,18 +24,19 @@ public class Bot1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() // pra fazer as balas desaparecem e so mudar o tempo de viada restante 
     {
-
+     
         if (life > 0)
         {
             if (life <= 1000 & life > 900) // pouco tempo entre um padrao e outro  
             {
-                ataques[0].gameObject.SetActive(true);
+                 ataques[0].gameObject.SetActive(true);
+                
             }
             else if (life <= 900 & life > 750)
             {
-                 ataques[1].gameObject.SetActive(true);
+                ataques[1].gameObject.SetActive(true);
             }
             else if (life <= 750 & life > 550)
             {
@@ -54,7 +53,7 @@ public class Bot1 : MonoBehaviour
         }else if(life2 > 0)
         {
 
-        }
+        } 
 
         if (life5 <= 0)
             Death();
@@ -102,23 +101,5 @@ public class Bot1 : MonoBehaviour
     public void Padrao3()
     {
 
-    }
-
-    void TimeCount()
-    {
-        timeOver = false;
-
-        if (!timeOver && timeCount > 0)
-        {
-            timeCount -= Time.deltaTime;
-
-            if (timeCount < 0)
-            {
-                timeCount = 0;
-                
-                timeOver = true;
-                
-            }
-        }
     }
 }
