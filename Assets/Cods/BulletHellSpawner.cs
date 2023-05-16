@@ -14,10 +14,15 @@ public class BulletHellSpawner : MonoBehaviour
     public float size;
     public float angle;
     public float delay;
+    public float ratio;
+    public int maxParticles;
    // public float gravity;
     public Material material;
     public float spin_speed;
     private float time;
+
+    public bool SOL = false;
+    public float newSize;
 
     ParticleSystem.Particle[] nParticles;
     
@@ -47,7 +52,7 @@ public class BulletHellSpawner : MonoBehaviour
 
     void Summon()
     {
-        angle = 360f / numer_of_columns; // mudar esse 360 para fazer outros formatos 
+        angle = ratio / numer_of_columns; // mudar esse 360 para fazer outros formatos 
 
         for (int i = 0; i < numer_of_columns; i++)
         {
@@ -69,7 +74,7 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.simulationSpeed = speedAto; // n testado
             mainModule.startSpeed = speed;
            // mainModule.startDelay = delay; // nao funciona, talvez criar outro script e desativar esse cod pelo tempo de delay
-            mainModule.maxParticles = 10000;
+            mainModule.maxParticles = maxParticles;
            // mainModule.duration = 5f;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
@@ -93,6 +98,13 @@ public class BulletHellSpawner : MonoBehaviour
             collision.collidesWith = LayerMask.GetMask("Player");
             collision.lifetimeLoss = lifetime;
             collision.sendCollisionMessages = true;
+
+            var sizeLife = system.sizeOverLifetime; // novo
+            sizeLife.enabled = SOL;
+            if(SOL)
+            {
+                sizeLife.x = newSize;
+            }
         }
 
         // Every 2 secs we will emit.
