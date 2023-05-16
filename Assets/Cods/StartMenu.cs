@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
+    public Player player;
     public void PlayGame()
     {
         Time.timeScale = 1f;
@@ -25,6 +26,15 @@ public class StartMenu : MonoBehaviour
 
     public void Continue()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
+        player.life = 3;
+        player.timeCount = 5;
+        player.hit = true;
+        player.morreu = false;
+        Time.timeScale = 1f;
+        SceneManager.UnloadSceneAsync("GameOver");
+
+
 
     }
 }

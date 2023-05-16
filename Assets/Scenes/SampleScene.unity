@@ -1372,11 +1372,13 @@ MonoBehaviour:
   speed: 8
   dano: 0
   hit: 0
+  morreu: 0
   timeCount: 0
   timeOver: 0
   coracoes:
   - {fileID: 1905363641}
   - {fileID: 1040624014}
+  - {fileID: 343712651}
   icon: {fileID: 346566721}
   bullet: {fileID: 206860395}
 --- !u!50 &477765565

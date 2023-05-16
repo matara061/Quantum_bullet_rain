@@ -9,7 +9,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public float speed;
     public float dano;
     public bool hit;
-    private bool morreu = false;
+    public bool morreu = false;
 
     public float timeCount;   
     public bool timeOver;
@@ -38,15 +38,20 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             morreu = true;
             Death();
         }
-        else if (life == 2 && hit) // life > 0
+        else if (life == 3 && hit) // life > 0
         {
             TimeCount();
             coracoes[0].gameObject.SetActive(false);
         }
-        else if (life == 1 && hit) // life > 0
+        else if (life == 2 && hit) // life > 0
         {
             TimeCount();
             coracoes[1].gameObject.SetActive(false);
+        }
+        else if (life == 1 && hit) // life > 0
+        {
+            TimeCount();
+            coracoes[2].gameObject.SetActive(false);
         }
 
 
