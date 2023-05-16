@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Bot1 : MonoBehaviour
 {
-    public float life = 1000; //sobrevive +- 30 segundos acertando todos os tiros 
-    public float life2 = 1000;
-    public float life3 = 1000;
-    public float life4 = 1000;
-    public float life5 = 1000;
+    public float life = 5000; 
     public float speed;
     private float dam = 1.2f;
 
     public GameObject[] ataques;
+    public GameObject[] bombas;
 
     public BulletHellSpawner hell;
 
@@ -29,34 +26,45 @@ public class Bot1 : MonoBehaviour
      
         if (life > 0)
         {
-            if (life <= 1000 & life > 900) // pouco tempo entre um padrao e outro  
+            if (life <= 5000 & life > 4900) // talvez de pra fazer pelo metodo de anrir uma cena em cima da outra  
             {
                  ataques[0].gameObject.SetActive(true);
                 
             }
-            else if (life <= 900 & life > 750)
+            else if (life <= 4900 & life > 4750)
             {
                 ataques[1].gameObject.SetActive(true);
             }
-            else if (life <= 750 & life > 550)
+            else if (life <= 4750 & life > 3000)
             {
                 ataques[0].gameObject.SetActive(false);
                 ataques[1].gameObject.SetActive(false);
                 ataques[2].gameObject.SetActive(true);
                 ataques[4].gameObject.SetActive(true);
             }
-            else if (life <= 550 & life > 400)
+            else if (life <= 3000 & life > 2000)
             {
-                ataques[5].gameObject.SetActive(true);
+                ataques[4].gameObject.SetActive(false);
                 ataques[3].gameObject.SetActive(true);
+                bombas[0].gameObject.SetActive(true);
+                bombas[1].gameObject.SetActive(true);
             }
-        }else if(life2 > 0)
+            else if (life <= 2000 & life > 1100)
+            {
+                ataques[2].gameObject.SetActive(false);
+                ataques[3].gameObject.SetActive(false);
+                bombas[0].gameObject.SetActive(false);
+                bombas[1].gameObject.SetActive(false);
+                ataques[4].gameObject.SetActive(true);
+                ataques[5].gameObject.SetActive(true);
+                bombas[2].gameObject.SetActive(true);
+                bombas[3].gameObject.SetActive(true);
+            }
+        }
+        else if(life <= 0)
         {
-
-        } 
-
-        if (life5 <= 0)
             Death();
+        } 
     }
 
     private void OnParticleCollision(GameObject other)

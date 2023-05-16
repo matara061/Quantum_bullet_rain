@@ -16,7 +16,6 @@ public class BulletHellSpawner : MonoBehaviour
     public float delay;
     public float ratio;
     public int maxParticles;
-   // public float gravity;
     public Material material;
     public float spin_speed;
     private float time;
@@ -69,11 +68,9 @@ public class BulletHellSpawner : MonoBehaviour
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             var mainModule = system.main;
             mainModule.startColor = Color.green;
-           // mainModule.gravityModifier = gravity;// nao testado
             mainModule.startSize = 0.5f;
-            mainModule.simulationSpeed = speedAto; // n testado
+            mainModule.simulationSpeed = speedAto; 
             mainModule.startSpeed = speed;
-           // mainModule.startDelay = delay; // nao funciona, talvez criar outro script e desativar esse cod pelo tempo de delay
             mainModule.maxParticles = maxParticles;
            // mainModule.duration = 5f;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
@@ -83,7 +80,7 @@ public class BulletHellSpawner : MonoBehaviour
 
             var forma = system.shape;
             forma.enabled = true;
-            forma.shapeType = ParticleSystemShapeType.Sprite; // outros formatos sao legais tb
+            forma.shapeType = ParticleSystemShapeType.Sprite; 
             forma.sprite = null;
 
             var text = system.textureSheetAnimation;

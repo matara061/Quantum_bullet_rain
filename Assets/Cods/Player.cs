@@ -9,11 +9,13 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public float speed;
     public float dano;
     public bool hit;
+    private bool morreu = false;
 
     public float timeCount;   
     public bool timeOver;
 
     public GameObject[] coracoes;
+    public GameObject icon;
 
     private Rigidbody2D rb2d;
    // private BoxCollider2D col;
@@ -31,8 +33,9 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     void Update()
     {
 
-        if (life <= 0)
+        if (life <= 0 & !morreu)
         {
+            morreu = true;
             Death();
         }
         else if (life == 2 && hit) // life > 0
@@ -85,6 +88,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
         if (!timeOver && timeCount > 0)
         {
+            icon.gameObject.SetActive(true);
             timeCount -= Time.deltaTime;
 
             if(timeCount < 0)
@@ -92,6 +96,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
                 timeCount = 0;
                 hit = false;
                 timeOver = true;
+                icon.gameObject.SetActive(false);
                 col.enabled = true;
             }
         }
@@ -99,7 +104,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     private void Death()
     {
-        //SceneManager.LoadScene("GameOver");
+        Time.timeScale = 0f;
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
          //Debug.Log("morreu");
     }
 
