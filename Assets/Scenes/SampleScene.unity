@@ -1373,6 +1373,7 @@ MonoBehaviour:
   dano: 0
   hit: 0
   morreu: 0
+  revive: 0
   timeCount: 0
   timeOver: 0
   coracoes:

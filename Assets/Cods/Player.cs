@@ -45,26 +45,25 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             for (int i = 0; i < 3; i++)
             {
                 coracoes[i].SetActive(true);
-                Debug.Log(i);
+                
             }
             TimeCount();
-            revive = false;
-        }
-        else if (life == 3 && hit) // life > 0
-        {
-            TimeCount();
-            coracoes[0].gameObject.SetActive(false);
         }
         else if (life == 2 && hit) // life > 0
         {
             TimeCount();
-            coracoes[1].gameObject.SetActive(false);
+            coracoes[0].gameObject.SetActive(false);
         }
         else if (life == 1 && hit) // life > 0
         {
             TimeCount();
-            coracoes[2].gameObject.SetActive(false);
+            coracoes[1].gameObject.SetActive(false);
         }
+     /*   else if (life == 1 && hit) // life > 0
+        {
+            TimeCount();
+            coracoes[2].gameObject.SetActive(false);
+        }*/
 
 
 
@@ -111,6 +110,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             if(timeCount < 0)
             {
                 timeCount = 0;
+                revive = false;
                 hit = false;
                 timeOver = true;
                 icon.gameObject.SetActive(false);
