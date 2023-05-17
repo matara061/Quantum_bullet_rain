@@ -123,19 +123,22 @@ public class BulletHellSpawner : MonoBehaviour
         }
     }
 
-    /*   private void LateUpdate()
+   /*    private void LateUpdate()
        {
-           InitializeIfNeeded();
+        foreach (Transform child in transform)
+        {
+            InitializeIfNeeded();
 
-           int numParticlesAlive = system.GetParticles(nParticles);
+            int numParticlesAlive = system.GetParticles(nParticles);
 
-           for (int i = 0; i < numParticlesAlive; i++)
-           {
-               nParticles[i].velocity += Vector3.up * mDrift;
-               nParticles[i].color = Color.blue;
-           }
+            for (int i = 0; i < numParticlesAlive; i++)
+            {
+                // nParticles[i].velocity += Vector3.up * mDrift;
+                nParticles[i].color = Color.blue;
+            }
 
-           system.SetParticles(nParticles, numParticlesAlive);
+            system.SetParticles(nParticles, numParticlesAlive);
+        }
        }
 
        void InitializeIfNeeded()
