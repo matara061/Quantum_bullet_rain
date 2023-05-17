@@ -12,12 +12,13 @@ public class Bot1 : MonoBehaviour
     public GameObject[] bombas;
 
     public BulletHellSpawner hell;
+    public BarraVida healthBar;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthBar.SetMaxHealth(life);
     }
 
     // Update is called once per frame
@@ -72,6 +73,7 @@ public class Bot1 : MonoBehaviour
         if (life > 0)
         {
          life -= dam;
+            healthBar.SetHealth(life);
 
         }
         //Debug.Log("Hit");
