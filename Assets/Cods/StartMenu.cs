@@ -6,10 +6,21 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public Player player;
+    public AudioSource musica;
 
+    private void Awake()
+    {
+        Cursor.visible = true;
+    }
+
+    private void Start()
+    {
+        musica = GameObject.Find("musicaBoss").GetComponent<AudioSource>();
+    }
     public void PlayGame()
     {
         Time.timeScale = 1f;
+        Cursor.visible = false;
         SceneManager.LoadScene("SampleScene");
     }
 
@@ -33,6 +44,8 @@ public class StartMenu : MonoBehaviour
         player.revive = true;
         player.hit = true;
         player.morreu = false;
+        musica.Play();
+        Cursor.visible = false;
         Time.timeScale = 1f;
         SceneManager.UnloadSceneAsync("GameOver");
 

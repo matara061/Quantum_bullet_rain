@@ -18,6 +18,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public GameObject[] coracoes;
     public GameObject icon;
 
+    public AudioSource musica;
+
     private Rigidbody2D rb2d;
    // private BoxCollider2D col;
     private CircleCollider2D col;
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     void Update()
     {
 
-        if (life <= 0 & !morreu)
+        if (life <= 0 & !morreu) // em algumas situacoes os coracoes somem em ordem errada
         {
             coracoes[2].gameObject.SetActive(false);
             morreu = true;
@@ -51,13 +53,13 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         }
         else if (life == 2 && hit) // life > 0
         {
-            TimeCount();
             coracoes[0].gameObject.SetActive(false);
+            TimeCount();
         }
         else if (life == 1 && hit) // life > 0
         {
-            TimeCount();
             coracoes[1].gameObject.SetActive(false);
+            TimeCount();
         }
      /*   else if (life == 1 && hit) // life > 0
         {
@@ -122,6 +124,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     private void Death()
     {
         Time.timeScale = 0f;
+        musica.Pause();
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
          //Debug.Log("morreu");
     }

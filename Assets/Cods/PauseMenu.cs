@@ -9,12 +9,19 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    
+    public AudioSource musica;
 
+    public Player player;
+
+
+    private void Start()
+    {
+        musica = GameObject.Find("musicaBoss").GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && player.morreu == false)
         {
             if (GameIsPaused)
             {
@@ -29,12 +36,16 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        Cursor.visible = false;
         Time.timeScale = 1f;
+        musica.Play();
         GameIsPaused = false;
     }
 
     public void Pause()
     {
+        musica.Pause();
+        Cursor.visible = true;
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

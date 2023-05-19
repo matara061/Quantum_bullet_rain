@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bot1 : MonoBehaviour
 {
     public float life = 5000; 
     public float speed;
     private float dam = 1.2f;
+    public bool morreu = false;
 
     public GameObject[] ataques;
     public GameObject[] bombas;
 
     public BulletHellSpawner hell;
     public BarraVida healthBar;
+
+    public AudioSource musica;
 
 
     // Start is called before the first frame update
@@ -62,9 +66,10 @@ public class Bot1 : MonoBehaviour
                 bombas[3].gameObject.SetActive(true);
             }
         }
-        else if(life <= 0)
+        else if(life <= 0 && !morreu)
         {
             Death();
+            morreu = true;
         } 
     }
 
@@ -81,7 +86,9 @@ public class Bot1 : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("MORREU");
+        Time.timeScale = 0f;
+        musica.Pause();
+        SceneManager.LoadScene("Vitoria", LoadSceneMode.Additive);
     }
 
     public void Padrao1()

@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
-    public Text timeText;
-    public float timeCount;
-    // Start is called before the first frame update
+    public PauseMenu pauseMenu;
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
     void Start()
     {
         
@@ -17,17 +18,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeCount();
+  
     }
 
-    public void RefreshScreen()
-    {
-        timeText.text = timeCount.ToString("F0");
-    }
-
-    void TimeCount()
-    {
-        timeCount += Time.deltaTime;
-        RefreshScreen();
-    }
 }
