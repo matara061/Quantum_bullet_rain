@@ -9,48 +9,63 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Bot1 bot1;
 
+    public int playerMortes;
+    public bool bossMorte;
+
     private int cont = 0;
+
+    public static GameManager instance;
     private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
     void Start()
     {
-        
+        player = GameObject.Find("Player").GetComponent<Player>();
+        bot1 = GameObject.Find("Inimigo1").GetComponent<Bot1>();
     }
 
     // Update is called once per frame
     void Update()
     {
   
-        if (bot1.morreu && cont == 0)
+        playerMortes = player.mortes;
+        bossMorte = bot1.morreu;
+
+        if (bossMorte)
         {
             nota();
-            cont = 1;
         }
     }
 
     void nota()
     {
-        if(player.mortes == 0)
+        if(playerMortes == 0)
         {
             notas[0] = GameObject.Find("A");
             notas[0].gameObject.SetActive(true);
         }
         else
-            if(player.mortes >= 1 && player.mortes < 3)
+            if(playerMortes >= 1 && playerMortes < 3)
         {
             notas[1] = GameObject.Find("B");
             notas[1].gameObject.SetActive(true);
         }
         else
-            if (player.mortes >= 3 && player.mortes < 5)
+            if (playerMortes >= 3 && playerMortes < 5)
         {
             notas[2] = GameObject.Find("C");
             notas[2].gameObject.SetActive(false);
         }
         else
-            if (player.mortes >= 5)
+            if (playerMortes >= 5)
         {
             notas[3] = GameObject.Find("D");
             notas[3].gameObject.SetActive(true);

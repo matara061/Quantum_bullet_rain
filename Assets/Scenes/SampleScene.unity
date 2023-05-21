@@ -501,6 +501,8 @@ MonoBehaviour:
   - {fileID: 0}
   player: {fileID: 477765564}
   bot1: {fileID: 669191548}
+  playerMortes: 0
+  bossMorte: 0
 --- !u!4 &149917023
 Transform:
   m_ObjectHideFlags: 0

@@ -92,7 +92,7 @@ public class Bot1 : MonoBehaviour
     {
         Time.timeScale = 0f;
         musica.Pause();
-        SceneManager.LoadScene("Vitoria", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Vitoria");
     }
 
     public void Padrao1()
