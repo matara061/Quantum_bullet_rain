@@ -46,10 +46,14 @@ public class Bot1 : MonoBehaviour
                 ataques[1].gameObject.SetActive(false);
                 ataques[2].gameObject.SetActive(true);
                 ataques[4].gameObject.SetActive(true);
+                bombas[4].gameObject.SetActive(true);
+                bombas[5].gameObject.SetActive(true);
             }
             else if (life <= 3000 & life > 2000)
             {
                 ataques[4].gameObject.SetActive(false);
+                bombas[4].gameObject.SetActive(false);
+                bombas[5].gameObject.SetActive(false);
                 ataques[3].gameObject.SetActive(true);
                 bombas[0].gameObject.SetActive(true);
                 bombas[1].gameObject.SetActive(true);
