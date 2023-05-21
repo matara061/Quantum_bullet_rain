@@ -12,6 +12,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public bool morreu = false;
     public bool revive = false;
 
+    public int mortes = 0;
+
     public float timeCount;   
     public bool timeOver;
 
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         {
             coracoes[2].gameObject.SetActive(false);
             morreu = true;
+            mortes++;
             Death();
         }
         else if (life == 3 && revive)
