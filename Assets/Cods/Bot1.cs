@@ -90,8 +90,8 @@ public class Bot1 : MonoBehaviour
 
     private void Death()
     {
-        Time.timeScale = 0f;
-        musica.Pause();
+       // Time.timeScale = 0f;
+       // musica.Pause();
         SceneManager.LoadScene("Vitoria");
     }
 
