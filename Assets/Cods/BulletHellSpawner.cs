@@ -24,6 +24,8 @@ public class BulletHellSpawner : MonoBehaviour
     public float newSize;
 
     ParticleSystem.Particle[] nParticles;
+
+    public string[] layers;
     
 
 
@@ -33,6 +35,8 @@ public class BulletHellSpawner : MonoBehaviour
 
     private void Awake()   
     {
+        layers[0] = "Player";
+        layers[1] = "Escudo";
 
            Summon();
     }
@@ -92,7 +96,8 @@ public class BulletHellSpawner : MonoBehaviour
             collision.enabled = true;
             collision.type = ParticleSystemCollisionType.World;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
-            collision.collidesWith = LayerMask.GetMask("Player");
+            collision.collidesWith = LayerMask.GetMask(layers[0], layers[1]);
+            //collision.collidesWith = LayerMask.GetMask("Escudo");
             collision.lifetimeLoss = lifetime;
             collision.sendCollisionMessages = true;
 

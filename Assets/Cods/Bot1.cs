@@ -15,6 +15,7 @@ public class Bot1 : MonoBehaviour
 
     public BulletHellSpawner hell;
     public BarraVida healthBar;
+    public Player player;
 
     public AudioSource musica;
 
@@ -75,6 +76,12 @@ public class Bot1 : MonoBehaviour
             Death();
             morreu = true;
         } 
+
+        if (player.shild)
+        {
+            dam = 3;
+        }else
+            dam = 1.2f;
     }
 
     private void OnParticleCollision(GameObject other)
