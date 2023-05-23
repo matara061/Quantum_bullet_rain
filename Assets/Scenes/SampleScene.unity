@@ -614,6 +614,8 @@ MonoBehaviour:
   bot1: {fileID: 669191548}
   playerMortes: 0
   bossMorte: 0
+  cena: 
+  cena2: 
 --- !u!4 &149917023
 Transform:
   m_ObjectHideFlags: 0

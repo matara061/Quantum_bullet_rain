@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class GameManager : MonoBehaviour
     public bool bossMorte;
 
     private int cont = 0;
+
+    Scene ganhou;
+    Scene atual;
+
+    public string cena;
+    public string cena2;
 
     public static GameManager instance;
     private void Awake()
@@ -30,6 +37,12 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         bot1 = GameObject.Find("Inimigo1").GetComponent<Bot1>();
+
+        cena = "Vitoria";
+        cena2 = SceneManager.GetActiveScene().name;
+
+        ganhou = SceneManager.GetSceneByName("Vitoria");
+        atual = SceneManager.GetActiveScene();
     }
 
     // Update is called once per frame
@@ -38,14 +51,17 @@ public class GameManager : MonoBehaviour
   
         playerMortes = player.mortes;
         bossMorte = bot1.morreu;
+        cena2 = SceneManager.GetActiveScene().name;
 
-        if (bossMorte)
+        // Debug.Log(atual);
+        if (cena == cena2) // nao pega direito 
         {
+            Debug.Log("gam");
             nota();
         }
     }
 
-    void nota()
+    void nota() // fazer por addtive cene ou tipo o pause menu 
     {
         if(playerMortes == 0)
         {
