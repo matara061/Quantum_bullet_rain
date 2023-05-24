@@ -3,89 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] notas;
     public Player player;
     public Bot1 bot1;
+    public AudioSource musica;
+
+    public TextMeshProUGUI timeText;
+    public float timeCount;
 
     public int playerMortes;
     public bool bossMorte;
 
-    private int cont = 0;
-
-    Scene ganhou;
-    Scene atual;
-
-    public string cena;
-    public string cena2;
-
-    public static GameManager instance;
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-    }
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        player = GameObject.Find("Player").GetComponent<Player>(); // mudar dps
         bot1 = GameObject.Find("Inimigo1").GetComponent<Bot1>();
 
-        cena = "Vitoria";
-        cena2 = SceneManager.GetActiveScene().name;
-
-        ganhou = SceneManager.GetSceneByName("Vitoria");
-        atual = SceneManager.GetActiveScene();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        timeCount += Time.deltaTime;
+        timeText.text = timeCount.ToString("F0");
   
         playerMortes = player.mortes;
         bossMorte = bot1.morreu;
-        cena2 = SceneManager.GetActiveScene().name;
 
-        // Debug.Log(atual);
-        if (cena == cena2) // nao pega direito 
+        if(bossMorte)
         {
-            Debug.Log("gam");
-            nota();
+            Time.timeScale = 0f;
+            musica.Pause();
         }
+        
     }
 
-    void nota() // fazer por addtive cene ou tipo o pause menu 
-    {
-        if(playerMortes == 0)
-        {
-            notas[0] = GameObject.Find("A");
-            notas[0].gameObject.SetActive(true);
-        }
-        else
-            if(playerMortes >= 1 && playerMortes < 3)
-        {
-            notas[1] = GameObject.Find("B");
-            notas[1].gameObject.SetActive(true);
-        }
-        else
-            if (playerMortes >= 3 && playerMortes < 5)
-        {
-            notas[2] = GameObject.Find("C");
-            notas[2].gameObject.SetActive(false);
-        }
-        else
-            if (playerMortes >= 5)
-        {
-            notas[3] = GameObject.Find("D");
-            notas[3].gameObject.SetActive(true);
-        }
-    }
-
+    
 }

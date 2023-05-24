@@ -517,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &149917022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,17 +530,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63eb7e294ded4094e9cc0ddfb850d8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notas:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   player: {fileID: 477765564}
   bot1: {fileID: 669191548}
+  musica: {fileID: 462417245}
+  timeText: {fileID: 662254620}
+  timeCount: 0
   playerMortes: 0
   bossMorte: 0
-  cena: 
-  cena2: 
 --- !u!4 &149917023
 Transform:
   m_ObjectHideFlags: 0
@@ -3024,7 +3020,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f3dc129d09ca02646ae1def229d9d1e4, type: 2}
+  - {fileID: 2100000, guid: d7bac3ffa2f94f046981d7d97def2af0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9890,6 +9886,7 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 240412865}
   musica: {fileID: 0}
   player: {fileID: 477765564}
+  Bot1: {fileID: 669191548}
 --- !u!114 &1598933623
 MonoBehaviour:
   m_ObjectHideFlags: 0

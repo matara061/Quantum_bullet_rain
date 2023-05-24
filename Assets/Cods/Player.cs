@@ -45,7 +45,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     void Update()
     {
 
-        if (life <= 0 & !morreu) // em algumas situacoes os coracoes somem em ordem errada
+        if (life <= 0 & !morreu) // em algumas situacoes os coracoes somem em ordem errada // player esta tomando 2 hits ao mesmo tempo, a vida diminui ent o cod pula a pri condicao
         {
             coracoes[2].gameObject.SetActive(false);
             morreu = true;
@@ -187,6 +187,6 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     {
         especial.gameObject.SetActive(true);
         this.gameObject.layer = 11;
-        timeCount2 = 5;
+        timeCount2 = 6;
     }
 }

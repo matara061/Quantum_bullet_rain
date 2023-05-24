@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
 
     public Player player;
 
+    public Bot1 Bot1;
+
 
     private void Start()
     {
@@ -21,7 +23,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && player.morreu == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.morreu && !Bot1.morreu)
         {
             if (GameIsPaused)
             {

@@ -97,7 +97,6 @@ public class BulletHellSpawner : MonoBehaviour
             collision.type = ParticleSystemCollisionType.World;
             collision.mode = ParticleSystemCollisionMode.Collision2D;
             collision.collidesWith = LayerMask.GetMask(layers[0], layers[1]);
-            //collision.collidesWith = LayerMask.GetMask("Escudo");
             collision.lifetimeLoss = lifetime;
             collision.sendCollisionMessages = true;
 

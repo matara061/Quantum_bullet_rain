@@ -27,12 +27,12 @@ public class Bot1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update() // pra fazer as balas desaparecem e so mudar o tempo de viada restante 
+    void Update() 
     {
      
         if (life > 0)
         {
-            if (life <= 5000 & life > 4900) // talvez de pra fazer pelo metodo de anrir uma cena em cima da outra  
+            if (life <= 5000 & life > 4900)   
             {
                  ataques[0].gameObject.SetActive(true);
                 
@@ -92,42 +92,13 @@ public class Bot1 : MonoBehaviour
             healthBar.SetHealth(life);
 
         }
-        //Debug.Log("Hit");
+        
     }
 
     private void Death()
     {
        // Time.timeScale = 0f;
        // musica.Pause();
-        SceneManager.LoadScene("Vitoria");
-    }
-
-    public void Padrao1()
-    {
-        hell.numer_of_columns = 50;
-        hell.speed = 5;
-        hell.speedAto = 0.5f;
-        hell.color = Color.red;
-        hell.lifetime = 10;
-        hell.firerate = 1;
-        hell.size = 0.2f;
-        hell.spin_speed = 10;
-    }
-
-    public void Padrao2() // add movimento do boss 
-    {
-        hell.numer_of_columns = 15;
-        hell.speed = 5;
-        hell.speedAto = 0.5f;
-        hell.color = Color.blue;
-        hell.lifetime = 10;
-        hell.firerate = 0.2f;
-        hell.size = 0.2f;
-        hell.spin_speed = 25;
-    }
-
-    public void Padrao3()
-    {
-
+        SceneManager.LoadScene("Vitoria", LoadSceneMode.Additive);
     }
 }
