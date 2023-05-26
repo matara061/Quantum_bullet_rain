@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public int playerMortes;
     public bool bossMorte;
 
+    public bool triger = false;
+
+    public GameObject[] coracoes;
+    public GameObject[] estrelas;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>(); // mudar dps
@@ -38,6 +43,50 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             musica.Pause();
+        }
+
+        if(player.revive)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                coracoes[i].SetActive(true);
+            }
+            Time.timeScale = 1f;
+            musica.Play();
+            triger = false;
+        }
+
+        if(!player.morreu)
+        {
+            if(player.currentLife == 2)
+            {
+                coracoes[0].gameObject.SetActive(false);
+            }else if(player.currentLife == 1)
+            {
+                coracoes[1].gameObject.SetActive(false);
+            }
+        }else if(!triger)
+        {
+            coracoes[2].gameObject.SetActive(false);
+            Time.timeScale = 0f;
+            musica.Pause();
+            triger = true;
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+            Debug.Log("more");
+        }
+
+        if(player.numEstrelas >= 0)
+        {
+            if(player.numEstrelas == 2)
+            {
+                estrelas[0].gameObject.SetActive(false);
+            }else if (player.numEstrelas == 1)
+            {
+                estrelas[1].gameObject.SetActive(false);
+            }else if (player.numEstrelas == 0)
+            {
+                estrelas[2].gameObject.SetActive(false);
+            }
         }
         
     }

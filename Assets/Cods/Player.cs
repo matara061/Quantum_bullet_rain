@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour // player nao vai precisar clicar para atirar, vai automatico
 {
     public int life = 3;
+    public int currentLife;
     public int numEstrelas = 3;
     public float speed;
     public float dano;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     public float timeCount2;
     public bool timeOver2;
+    public bool OnInvencivel = false;   
 
     public GameObject[] coracoes;
     public GameObject[] estrelas;
@@ -28,6 +30,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public bool shild = false;
 
     public AudioSource musica;
+    public AudioSource specialEffect;
 
     private Rigidbody2D rb2d;
    // private BoxCollider2D col;
@@ -39,13 +42,15 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     {
         rb2d = GetComponent<Rigidbody2D>();
         col = GetComponent<CircleCollider2D>();
+
+        currentLife = life;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (life <= 0 & !morreu) // em algumas situacoes os coracoes somem em ordem errada // player esta tomando 2 hits ao mesmo tempo, a vida diminui ent o cod pula a pri condicao
+      /*  if (life <= 0 & !morreu) // em algumas situacoes os coracoes somem em ordem errada // player esta tomando 2 hits ao mesmo tempo, a vida diminui ent o cod pula a pri condicao
         {
             coracoes[2].gameObject.SetActive(false);
             morreu = true;
@@ -70,32 +75,55 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         {
             coracoes[1].gameObject.SetActive(false);
             TimeCount();
-        }
-        
+        }*/
 
-        if (numEstrelas >= 0)
+        
+        if (currentLife > 0 && !morreu)
         {
-            if (numEstrelas == 3 && Input.GetKeyDown(KeyCode.E) && !shild)
+            if (hit && !OnInvencivel)
             {
-                numEstrelas--;
-                estrelas[0].gameObject.SetActive(false);
-                shild = true;
-                special();
-            }else if (numEstrelas == 2 && Input.GetKeyDown(KeyCode.E) && !shild)
-            {
-                numEstrelas--;
-                estrelas[1].gameObject.SetActive(false);
-                shild = true;
-                special();
+                col.enabled = false;
+                OnInvencivel = true;
+                currentLife--;
+                timeCount = 3;
+                hit = false;
+
             }
-            else if (numEstrelas == 1 && Input.GetKeyDown(KeyCode.E) && !shild)
+
+            if (OnInvencivel)
             {
-                numEstrelas--;
-                estrelas[2].gameObject.SetActive(false);
-                shild = true;
-                special();
+                TimeCount();
             }
-            else if (shild)
+        }else if(!morreu)
+        {
+            mortes++;
+            hit = false;
+            OnInvencivel = false;
+            timeCount = 0;
+            morreu = true; 
+        }
+
+        if (revive)
+        {
+            col.enabled = false;
+            currentLife = life;
+            timeCount = 5;
+            OnInvencivel = true;
+            morreu = false;
+            revive = false;
+        }
+
+        if (numEstrelas >= 0) 
+        {
+            if(!shild && numEstrelas > 0)
+            {
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    numEstrelas--;
+                    shild = true;
+                    special();
+                }
+            }else
             {
                 TimeCount2();
             }
@@ -117,7 +145,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
        
        if (this.gameObject.layer == 6) // player esta tomando 2 hits ao mesmo tempo 
         {
-            if (life > 0)
+          /*  if (life > 0)
             {
                 life--;
                 hit = true;
@@ -126,6 +154,10 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
                 // TimeCount();
                 //  col.enabled = true; 
 
+            }*/
+          if(!hit)
+            {
+                hit = true;
             }
         }
     }
@@ -133,6 +165,33 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("collid");
+
+        if (collision.gameObject.layer == 12) // quando recupera vida para 3 se tiver com inven o time cont para 
+        {
+            if (life == 2)
+            {
+                coracoes[0].gameObject.SetActive(true);
+                life++;
+            }else if (life == 1)
+            {
+                coracoes[1].gameObject.SetActive(true);
+                life++;
+            }
+        }
+
+        if (collision.gameObject.layer == 13) // quando recupera vida para 3 se tiver com inven o time cont para 
+        {
+            if (numEstrelas == 2)
+            {
+                estrelas[0].gameObject.SetActive(true);
+                numEstrelas++;
+            }
+            else if (numEstrelas == 1)
+            {
+                estrelas[1].gameObject.SetActive(true);
+                numEstrelas++;
+            }
+        }
     }
 
     void TimeCount()
@@ -147,8 +206,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             if(timeCount < 0)
             {
                 timeCount = 0;
-                revive = false;
-                hit = false;
+              //  revive = false;
+                OnInvencivel = false;
                 timeOver = true;
                 icon.gameObject.SetActive(false);
                 col.enabled = true;
@@ -177,14 +236,17 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     private void Death()
     {
-        Time.timeScale = 0f;
-        musica.Pause();
-        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-         //Debug.Log("morreu");
+        /* Time.timeScale = 0f;
+         musica.Pause();
+         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
+         */
+        morreu = true;
+        mortes++;
     }
 
     public void special()
     {
+        specialEffect.Play();
         especial.gameObject.SetActive(true);
         this.gameObject.layer = 11;
         timeCount2 = 6;

@@ -39,14 +39,14 @@ public class StartMenu : MonoBehaviour
     public void Continue()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-        player.life = 3;
-        player.timeCount = 5;
+       // player.life = 3;
+       // player.timeCount = 5;
         player.revive = true;
-        player.hit = true;
+      //  player.hit = true;
         player.morreu = false;
-        musica.Play();
+      //  musica.Play();
         Cursor.visible = false;
-        Time.timeScale = 1f;
+       // Time.timeScale = 1f;
         SceneManager.UnloadSceneAsync("GameOver");
 
 
