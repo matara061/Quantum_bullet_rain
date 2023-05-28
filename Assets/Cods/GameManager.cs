@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
             musica.Pause();
             triger = true;
             SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-            Debug.Log("more");
+           // Debug.Log("more");
         }
 
         if(player.numEstrelas >= 0)

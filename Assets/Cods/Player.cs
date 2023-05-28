@@ -9,7 +9,6 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public int currentLife;
     public int numEstrelas = 3;
     public float speed;
-    public float dano;
     public bool hit;
     public bool morreu = false;
     public bool revive = false;
@@ -49,34 +48,6 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     // Update is called once per frame
     void Update()
     {
-
-      /*  if (life <= 0 & !morreu) // em algumas situacoes os coracoes somem em ordem errada // player esta tomando 2 hits ao mesmo tempo, a vida diminui ent o cod pula a pri condicao
-        {
-            coracoes[2].gameObject.SetActive(false);
-            morreu = true;
-            mortes++;
-            Death();
-        }
-        else if (life == 3 && revive)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                coracoes[i].SetActive(true);
-                
-            }
-            TimeCount();
-        }
-        else if (life == 2 && hit) // life > 0
-        {
-            coracoes[0].gameObject.SetActive(false);
-            TimeCount();
-        }
-        else if (life == 1 && hit) // life > 0
-        {
-            coracoes[1].gameObject.SetActive(false);
-            TimeCount();
-        }*/
-
         
         if (currentLife > 0 && !morreu)
         {
@@ -145,16 +116,6 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
        
        if (this.gameObject.layer == 6) // player esta tomando 2 hits ao mesmo tempo 
         {
-          /*  if (life > 0)
-            {
-                life--;
-                hit = true;
-                col.enabled = false;
-                timeCount = 3;
-                // TimeCount();
-                //  col.enabled = true; 
-
-            }*/
           if(!hit)
             {
                 hit = true;
@@ -164,18 +125,17 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("collid");
 
         if (collision.gameObject.layer == 12) // quando recupera vida para 3 se tiver com inven o time cont para 
         {
-            if (life == 2)
+            if (currentLife == 2)
             {
                 coracoes[0].gameObject.SetActive(true);
-                life++;
-            }else if (life == 1)
+                currentLife++;
+            }else if (currentLife == 1)
             {
                 coracoes[1].gameObject.SetActive(true);
-                life++;
+                currentLife++;
             }
         }
 
@@ -189,6 +149,10 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             else if (numEstrelas == 1)
             {
                 estrelas[1].gameObject.SetActive(true);
+                numEstrelas++;
+            }else if (numEstrelas == 0)
+            {
+                estrelas[2].gameObject.SetActive(true);
                 numEstrelas++;
             }
         }

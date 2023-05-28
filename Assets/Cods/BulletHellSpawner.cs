@@ -109,6 +109,7 @@ public class BulletHellSpawner : MonoBehaviour
         }
 
         // Every 2 secs we will emit.
+        // colocar aqui um music play para o efeito da bomba, deixa a variavel bool publica e mudar para true na unity 
         InvokeRepeating("DoEmit", delay, firerate);
     }
 
