@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Bot1 : MonoBehaviour
 {
-    public float life = 5000; 
+    public float life = 6000; 
     public float speed;
     private float dam = 1.2f;
     public bool morreu = false;
@@ -32,16 +32,16 @@ public class Bot1 : MonoBehaviour
      
         if (life > 0)
         {
-            if (life <= 5000 & life > 4900)   
+            if (life <= 6000 & life > 5900)   
             {
                  ataques[0].gameObject.SetActive(true);
                 
             }
-            else if (life <= 4900 & life > 4750)
+            else if (life <= 5900 & life > 5200)
             {
                 ataques[1].gameObject.SetActive(true);
             }
-            else if (life <= 4750 & life > 3000)
+            else if (life <= 5200 & life > 4600)
             {
                 ataques[0].gameObject.SetActive(false);
                 ataques[1].gameObject.SetActive(false);
@@ -50,7 +50,7 @@ public class Bot1 : MonoBehaviour
                 bombas[4].gameObject.SetActive(true);
                 bombas[5].gameObject.SetActive(true);
             }
-            else if (life <= 3000 & life > 2000)
+            else if (life <= 4600 & life > 3700)
             {
                 ataques[4].gameObject.SetActive(false);
                 bombas[4].gameObject.SetActive(false);
@@ -59,7 +59,7 @@ public class Bot1 : MonoBehaviour
                 bombas[0].gameObject.SetActive(true);
                 bombas[1].gameObject.SetActive(true);
             }
-            else if (life <= 2000 & life > 1100)
+            else if (life <= 3700 & life > 3000)
             {
                 ataques[2].gameObject.SetActive(false);
                 ataques[3].gameObject.SetActive(false);
@@ -69,6 +69,37 @@ public class Bot1 : MonoBehaviour
                 ataques[5].gameObject.SetActive(true);
                 bombas[2].gameObject.SetActive(true);
                 bombas[3].gameObject.SetActive(true);
+            }else if(life <= 3000 & life > 2350)
+            {
+                ataques[4].gameObject.SetActive(false);
+                ataques[5].gameObject.SetActive(false);
+                bombas[2].gameObject.SetActive(false);
+                bombas[3].gameObject.SetActive(false);
+                ataques[6].gameObject.SetActive(true);
+                ataques[7].gameObject.SetActive(true);
+            }else if(life <= 2350 & life > 1200)
+            {
+                ataques[6].gameObject.SetActive(false);
+                ataques[7].gameObject.SetActive(false);
+                ataques[8].gameObject.SetActive(true);
+                ataques[9].gameObject.SetActive(true);
+                ataques[0].gameObject.SetActive(true);
+            }else if(life <= 1200 & life > 500)
+            {
+                ataques[8].gameObject.SetActive(false);
+                ataques[9].gameObject.SetActive(false);
+                ataques[0].gameObject.SetActive(false);
+                bombas[0].gameObject.SetActive(true);
+                bombas[1].gameObject.SetActive(true);
+                bombas[6].gameObject.SetActive(true);
+                bombas[7].gameObject.SetActive(true);
+                bombas[8].gameObject.SetActive(true);
+                bombas[9].gameObject.SetActive(true);
+                bombas[10].gameObject.SetActive(true);
+                bombas[11].gameObject.SetActive(true);
+            }else if(life <= 500 & life > 0)
+            {
+                ataques[1].gameObject.SetActive(true);
             }
         }
         else if(life <= 0 && !morreu)
@@ -93,6 +124,19 @@ public class Bot1 : MonoBehaviour
 
         }
         
+    }
+
+    private void ParaAtaque()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            ataques[i].gameObject.SetActive(false);
+        }
+
+        for(int i = 0; i < 12; i++)
+        {
+            bombas[i].gameObject.SetActive(false);
+        }
     }
 
     private void Death()

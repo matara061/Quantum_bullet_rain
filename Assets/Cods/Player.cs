@@ -198,16 +198,6 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         }
     }
 
-    private void Death()
-    {
-        /* Time.timeScale = 0f;
-         musica.Pause();
-         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-         */
-        morreu = true;
-        mortes++;
-    }
-
     public void special()
     {
         specialEffect.Play();

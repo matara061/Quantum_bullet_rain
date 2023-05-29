@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
     public GameObject[] coracoes;
     public GameObject[] estrelas;
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>(); // mudar dps
