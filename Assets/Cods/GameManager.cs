@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public Player player;
+    public Player player = null;
     public Bot1 bot1;
     public AudioSource musica;
 
@@ -42,7 +42,11 @@ public class GameManager : MonoBehaviour
         timeText.text = timeCount.ToString("F0");
   
         playerMortes = player.mortes;
-        bossMorte = bot1.morreu;
+
+        if(bot1 != null)
+        {
+            bossMorte = bot1.morreu;
+        }
 
         if(bossMorte)
         {
