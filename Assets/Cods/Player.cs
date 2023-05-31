@@ -30,6 +30,8 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
     public AudioSource musica;
     public AudioSource specialEffect;
+    public AudioSource pegaItem;
+    public AudioSource dano;
 
     private Rigidbody2D rb2d;
    // private BoxCollider2D col;
@@ -118,6 +120,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         {
           if(!hit)
             {
+                dano.Play();
                 hit = true;
             }
         }
@@ -128,6 +131,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
         if (collision.gameObject.layer == 12) // quando recupera vida para 3 se tiver com inven o time cont para 
         {
+            pegaItem.Play();
             if (currentLife == 2)
             {
                 coracoes[0].gameObject.SetActive(true);
@@ -141,6 +145,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
 
         if (collision.gameObject.layer == 13) // quando recupera vida para 3 se tiver com inven o time cont para 
         {
+            pegaItem.Play();
             if (numEstrelas == 2)
             {
                 estrelas[0].gameObject.SetActive(true);
