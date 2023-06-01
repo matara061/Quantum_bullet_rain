@@ -67,7 +67,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             {
                 TimeCount();
             }
-        }else if(!morreu)
+        }else if(!morreu && !revive)
         {
             mortes++;
             hit = false;
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             morreu = true; 
         }
 
-        if (revive)
+      /*  if (revive)
         {
             col.enabled = false;
             currentLife = life;
@@ -84,7 +84,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             OnInvencivel = true;
             morreu = false;
             revive = false;
-        }
+        }*/
 
         if (numEstrelas >= 0) 
         {
@@ -203,6 +203,15 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
         }
     }
 
+    public void Revive()
+    {
+        col.enabled = false;
+        currentLife = life;
+        timeCount = 5;
+        OnInvencivel = true;
+        morreu = false;
+        revive = false;
+    }
     public void special()
     {
         specialEffect.Play();
