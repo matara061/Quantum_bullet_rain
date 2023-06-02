@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartMenu : MonoBehaviour
 {
     public Player player;
-    public AudioSource musica;
+    public MenuManager menuManager;
 
     public GameObject[] textPT;
     public GameObject[] textEN;
@@ -14,16 +14,20 @@ public class StartMenu : MonoBehaviour
     public GameObject menuEN;
     public GameObject menuPT;
 
-    public bool EN = true;
+    //public bool EN = true;
 
     private void Awake()
     {
+        menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
+
+        CurrentLanguage();
+
         Cursor.visible = true;
     }
 
     private void Start()
     {
-        musica = GameObject.Find("musicaBoss").GetComponent<AudioSource>();
+
     }
     public void PlayGame()
     {
@@ -38,32 +42,9 @@ public class StartMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void Desistir()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Start");
-    }
-
-    public void Continue()
-    {
-        player = GameObject.Find("Player").GetComponent<Player>();
-       // player.life = 3;
-       // player.timeCount = 5;
-        player.revive = true;
-      //  player.hit = true;
-        player.morreu = false;
-      //  musica.Play();
-        Cursor.visible = false;
-       // Time.timeScale = 1f;
-        SceneManager.UnloadSceneAsync("GameOver");
-
-
-
-    }
-
     public void TutorialButton()
     {
-        if(EN)
+        if(menuManager.EN)
         {
             menuEN.SetActive(true);
         }else
@@ -74,7 +55,7 @@ public class StartMenu : MonoBehaviour
 
     public void BackButton()
     {
-        if (EN)
+        if (menuManager.EN)
         {
             menuEN.SetActive(false);
         }
@@ -86,14 +67,14 @@ public class StartMenu : MonoBehaviour
 
     public void LanguageButton()
     {
-        if(EN)
+        if(menuManager.EN)
         {
             for (int i = 0; i < 5; i++)
             {
                 textEN[i].gameObject.SetActive(false);
                 textPT[i].gameObject.SetActive(true);
             }
-            EN = false;
+            menuManager.EN = false;
         }else
         {
             for (int i = 0; i < 5; i++)
@@ -101,7 +82,27 @@ public class StartMenu : MonoBehaviour
                 textPT[i].gameObject.SetActive(false);
                 textEN[i].gameObject.SetActive(true);
             }
-            EN = true;
+            menuManager.EN = true;
+        }
+    }
+
+    private void CurrentLanguage()
+    {
+        if (menuManager.EN)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                textEN[i].gameObject.SetActive(true);
+                textPT[i].gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                textPT[i].gameObject.SetActive(true);
+                textEN[i].gameObject.SetActive(false);
+            }
         }
     }
 }

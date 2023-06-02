@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
 
         if(player.revive)
         {
-            Debug.Log("revive");
             player.Revive();
             for (int i = 0; i < 3; i++)
             {

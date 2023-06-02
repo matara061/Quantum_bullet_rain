@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject pauseMenuPT;
 
     public AudioSource musica;
 
@@ -15,10 +16,14 @@ public class PauseMenu : MonoBehaviour
 
     public Bot1 Bot1;
 
+    public MenuManager menuManager;
+
 
     private void Start()
     {
         musica = GameObject.Find("musicaBoss").GetComponent<AudioSource>();
+
+        menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
     }
     // Update is called once per frame
     void Update()
@@ -37,7 +42,15 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        pauseMenuUI.SetActive(false);
+       // pauseMenuUI.SetActive(false);
+        if (menuManager.EN)
+        {
+            pauseMenuUI.SetActive(false);
+        }
+        else
+        {
+            pauseMenuPT.SetActive(false);
+        }
         Cursor.visible = false;
         Time.timeScale = 1f;
         musica.Play();
@@ -48,7 +61,14 @@ public class PauseMenu : MonoBehaviour
     {
         musica.Pause();
         Cursor.visible = true;
-        pauseMenuUI.SetActive(true);
+        if(menuManager.EN)
+        {
+            pauseMenuUI.SetActive(true);
+        }else
+        {
+            pauseMenuPT.SetActive(true);
+        }
+       // pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
