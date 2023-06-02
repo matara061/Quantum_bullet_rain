@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     public MenuManager menuManager;
 
+    public bool tuto = false;
+
 
     private void Start()
     {
@@ -28,7 +30,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !player.morreu && !Bot1.morreu)
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.morreu && !Bot1.morreu && !tuto)
         {
             if (GameIsPaused)
             {
@@ -78,5 +80,14 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Start");
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
+
+    public void Turorial()
+    {
+        if(!tuto)
+        {
+            tuto = true;
+        }else
+            tuto = false;
     }
 }

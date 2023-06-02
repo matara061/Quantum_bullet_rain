@@ -13,6 +13,8 @@ public class StartMenu : MonoBehaviour
 
     public GameObject menuEN;
     public GameObject menuPT;
+    public GameObject selectEN;
+    public GameObject selectPT;
 
     //public bool EN = true;
 
@@ -103,6 +105,18 @@ public class StartMenu : MonoBehaviour
                 textPT[i].gameObject.SetActive(true);
                 textEN[i].gameObject.SetActive(false);
             }
+        }
+    }
+
+    public void SelectStage()
+    {
+        if (menuManager.EN)
+        {
+            selectEN.SetActive(true);
+        }
+        else
+        {
+            selectPT.SetActive(true);
         }
     }
 }
