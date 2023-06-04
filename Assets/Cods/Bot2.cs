@@ -12,6 +12,7 @@ public class Bot2 : MonoBehaviour
 
     public GameObject[] ataques;
     public GameObject[] bombas;
+    public GameObject[] laisers;
 
     public BulletHellSpawner hell;
     public BarraVida healthBar;
