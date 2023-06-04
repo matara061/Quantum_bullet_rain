@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public Player player = null;
     public Bot1 bot1;
+    public Bot2 bot2;
     public AudioSource musica;
 
     public TextMeshProUGUI timeText;
@@ -29,8 +30,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>(); // mudar dps
-        bot1 = GameObject.Find("Inimigo1").GetComponent<Bot1>();
 
         
     }
@@ -46,6 +45,9 @@ public class GameManager : MonoBehaviour
         if(bot1 != null)
         {
             bossMorte = bot1.morreu;
+        }else if(bot2 != null)
+        {
+            bossMorte = bot2.morreu;
         }
 
         if(bossMorte)
