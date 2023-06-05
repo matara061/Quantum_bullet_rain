@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     public Player player;
    // public AudioSource musica;
     public MenuManager menuManager;
+    public GameManager gameManager;
 
     public GameObject panelEN;
     public GameObject panelPT;
@@ -42,9 +43,21 @@ public class GameOver : MonoBehaviour
 
     public void PlayGame()
     {
-        Time.timeScale = 1f;
-        Cursor.visible = false;
-        SceneManager.LoadScene("SampleScene");
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if(gameManager != null)
+        {
+            if(gameManager.fase == 1)
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                SceneManager.LoadScene("Fase1");
+            }else if(gameManager.fase == 2)
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                SceneManager.LoadScene("SampleScene");
+            }
+        }
     }
 
     public void Desistir()

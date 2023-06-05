@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public int playerMortes;
     public bool bossMorte;
 
+    public int fase;
+
     public bool triger = false;
 
     public GameObject[] coracoes;
@@ -30,8 +32,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (bot1 != null)
+        {
+            fase = 2;
+        }else if (bot2 != null)
+        {
+            fase = 1;
+        }
 
-        
+
     }
 
     // Update is called once per frame

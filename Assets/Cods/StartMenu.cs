@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class StartMenu : MonoBehaviour
 {
-    public Player player;
     public MenuManager menuManager;
 
     public GameObject[] textPT;
@@ -35,7 +34,7 @@ public class StartMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         Cursor.visible = false;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Fase1");
     }
 
     public void Sair()
@@ -118,5 +117,15 @@ public class StartMenu : MonoBehaviour
         {
             selectPT.SetActive(true);
         }
+    }
+
+    public void Fase1()
+    {
+        SceneManager.LoadScene("Fase1");
+    }
+
+    public void Fase2()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
