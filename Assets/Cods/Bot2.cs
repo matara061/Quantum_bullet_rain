@@ -46,7 +46,7 @@ public class Bot2 : MonoBehaviour
                     ataques[1].gameObject.SetActive(true);
                     ataques[2].gameObject.SetActive(true);
                 }
-                else if (life <= 5200 & life > 4600)
+                else if (life <= 5200 & life > 4600) // longo pacas
                 {
                     ataques[1].gameObject.SetActive(false);
                     ataques[2].gameObject.SetActive(false);
@@ -68,7 +68,7 @@ public class Bot2 : MonoBehaviour
             }
             else
             {
-                if (life > 2350)
+                if (life > 2350) // facil pacas
                 {
                     ataques[1].gameObject.SetActive(false);
                     bombas[0].gameObject.SetActive(false);
