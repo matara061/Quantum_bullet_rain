@@ -11485,7 +11485,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 120924201}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: Credits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

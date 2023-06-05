@@ -66,6 +66,11 @@ public class StartMenu : MonoBehaviour
         }
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Creditos");
+    }
+
     public void LanguageButton()
     {
         if(menuManager.EN)
