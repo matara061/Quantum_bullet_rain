@@ -32,4 +32,24 @@ public class MenuManager : MonoBehaviour
     {
         
     }
+
+    public void Resolution1()
+    {
+        Screen.SetResolution(1920, 1080, true);
+    }
+
+    public void Resolution2()
+    {
+        Screen.SetResolution(1280, 720, true);
+    }
+
+    public void Grafico1()
+    {
+        QualitySettings.SetQualityLevel(0, true);
+    }
+
+    public void Grafico2()
+    {
+        QualitySettings.SetQualityLevel(5, true);
+    }
 }
