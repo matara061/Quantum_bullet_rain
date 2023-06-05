@@ -37,7 +37,7 @@ public class Bot2 : MonoBehaviour
             {
                 if (life <= 6000 & life > 5900)
                 {
-                    //ataques[0].gameObject.SetActive(true);
+                    ataques[0].gameObject.SetActive(true);
 
                 }
                 else if (life <= 5900 & life > 5200)
@@ -120,10 +120,18 @@ public class Bot2 : MonoBehaviour
                     laisers[5].gameObject.SetActive(false);
                     laisers[6].gameObject.SetActive(false);
                     laisers[7].gameObject.SetActive(false);
+                    ataques[8].gameObject.SetActive(true);
+                    ataques[9].gameObject.SetActive(true);
                 }
                 else if (life <= 500 & life > 0)
                 {
-                    ataques[1].gameObject.SetActive(true);
+                    ataques[8].gameObject.SetActive(false);
+                    ataques[9].gameObject.SetActive(false);
+                    ataques[6].gameObject.SetActive(true);
+                    bombas[6].gameObject.SetActive(true);
+                    bombas[7].gameObject.SetActive(true);
+                    laisers[8].gameObject.SetActive(true);
+                    laisers[9].gameObject.SetActive(true);
                 }
             }
         }

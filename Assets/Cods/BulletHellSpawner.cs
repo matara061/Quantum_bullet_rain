@@ -80,7 +80,7 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = system.emission;
-            emission.enabled = false; 
+            emission.enabled = false;
 
             var forma = system.shape;
             forma.enabled = true;
