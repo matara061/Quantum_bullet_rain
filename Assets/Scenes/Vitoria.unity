@@ -2736,8 +2736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47.915367, y: 0}
-  m_SizeDelta: {x: 104.1693, y: 50}
+  m_AnchoredPosition: {x: -70.9, y: 0}
+  m_SizeDelta: {x: 208.5174, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613055562
 MonoBehaviour:
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nota:'
+  m_text: "Pontua\xE7\xE3o:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -2871,7 +2871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55, y: 20.322906}
+  m_AnchoredPosition: {x: 65, y: 20.322906}
   m_SizeDelta: {x: 143.6566, y: 140.6458}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613550761
@@ -3711,6 +3711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   menuManager: {fileID: 0}
+  gameManager: {fileID: 0}
   panelEN: {fileID: 370379421}
   panelPT: {fileID: 439305681}
 --- !u!1 &1783264597
@@ -3748,8 +3749,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -47.915367, y: 0}
-  m_SizeDelta: {x: 104.1693, y: 50}
+  m_AnchoredPosition: {x: -39.1501, y: 0}
+  m_SizeDelta: {x: 121.6998, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783264599
 MonoBehaviour:
@@ -3771,7 +3772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nota:'
+  m_text: 'Score:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}

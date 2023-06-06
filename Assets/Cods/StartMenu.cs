@@ -10,8 +10,7 @@ public class StartMenu : MonoBehaviour
     public GameObject[] textPT;
     public GameObject[] textEN;
 
-    public GameObject menuEN;
-    public GameObject menuPT;
+    public GameObject menuInicio;
     public GameObject selectEN;
     public GameObject selectPT;
 
@@ -30,6 +29,16 @@ public class StartMenu : MonoBehaviour
     {
 
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.X))
+        {
+            selectEN.SetActive(false);
+            selectPT.SetActive(false);
+            menuInicio.SetActive(true);
+        }
+    }
     public void PlayGame()
     {
         Time.timeScale = 1f;
@@ -45,25 +54,12 @@ public class StartMenu : MonoBehaviour
 
     public void TutorialButton()
     {
-        if(menuManager.EN)
-        {
-            menuEN.SetActive(true);
-        }else
-        {
-            menuPT.SetActive(true);
-        }
+        SceneManager.LoadScene("Manual");
     }
 
     public void BackButton()
     {
-        if (menuManager.EN)
-        {
-            menuEN.SetActive(false);
-        }
-        else
-        {
-            menuPT.SetActive(false);
-        }
+        
     }
 
     public void Credits()
