@@ -5632,7 +5632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1935445372}
   bot1: {fileID: 0}
-  bot2: {fileID: 967140253}
+  bot2: {fileID: 0}
+  bot3: {fileID: 967140256}
   musica: {fileID: 93991512}
   timeText: {fileID: 1746585018}
   timeCount: 0
@@ -8249,69 +8250,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 967140254}
-  - component: {fileID: 967140253}
+  - component: {fileID: 967140256}
   - component: {fileID: 967140255}
   m_Layer: 7
-  m_Name: Inimigo2
+  m_Name: Inimigo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &967140253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967140252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d888e4242660a7f4e99c91fa725380a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 6000
-  speed: 0
-  morreu: 0
-  ataques:
-  - {fileID: 1372469131}
-  - {fileID: 34826985}
-  - {fileID: 1859043997}
-  - {fileID: 1696913584}
-  - {fileID: 2044025699}
-  - {fileID: 1859148857}
-  - {fileID: 2078152686}
-  - {fileID: 828743944}
-  - {fileID: 567728280}
-  - {fileID: 858048499}
-  bombas:
-  - {fileID: 37292315}
-  - {fileID: 399568484}
-  - {fileID: 1277938038}
-  - {fileID: 1165920845}
-  - {fileID: 842328332}
-  - {fileID: 1561384457}
-  - {fileID: 228630419}
-  - {fileID: 784015583}
-  - {fileID: 1655811912}
-  - {fileID: 1352669190}
-  - {fileID: 1634224665}
-  - {fileID: 997123332}
-  laisers:
-  - {fileID: 1070706260}
-  - {fileID: 1023512341}
-  - {fileID: 486069380}
-  - {fileID: 205594461}
-  - {fileID: 808864901}
-  - {fileID: 1121738910}
-  - {fileID: 867464114}
-  - {fileID: 1421680320}
-  - {fileID: 679169132}
-  - {fileID: 142556374}
-  hell: {fileID: 1372469132}
-  healthBar: {fileID: 1369212308}
-  player: {fileID: 1935445372}
-  musica: {fileID: 93991512}
 --- !u!4 &967140254
 Transform:
   m_ObjectHideFlags: 0
@@ -8357,6 +8304,60 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.87298787, y: 2.6092453}
   m_EdgeRadius: 0
+--- !u!114 &967140256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967140252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d849ee05efc8edf41bd054a4bf82e460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 6000
+  speed: 0
+  morreu: 0
+  ataques:
+  - {fileID: 1372469131}
+  - {fileID: 34826985}
+  - {fileID: 1859043997}
+  - {fileID: 1696913584}
+  - {fileID: 2044025699}
+  - {fileID: 1859148857}
+  - {fileID: 2078152686}
+  - {fileID: 828743944}
+  - {fileID: 567728280}
+  - {fileID: 858048499}
+  bombas:
+  - {fileID: 37292315}
+  - {fileID: 399568484}
+  - {fileID: 1277938038}
+  - {fileID: 1165920845}
+  - {fileID: 842328332}
+  - {fileID: 1561384457}
+  - {fileID: 228630419}
+  - {fileID: 784015583}
+  - {fileID: 1655811912}
+  - {fileID: 1352669190}
+  - {fileID: 1634224665}
+  - {fileID: 997123332}
+  laisers:
+  - {fileID: 1070706260}
+  - {fileID: 1023512341}
+  - {fileID: 486069380}
+  - {fileID: 205594461}
+  - {fileID: 808864901}
+  - {fileID: 1121738910}
+  - {fileID: 867464114}
+  - {fileID: 1421680320}
+  - {fileID: 679169132}
+  - {fileID: 142556374}
+  hell: {fileID: 1372469132}
+  healthBar: {fileID: 1369212308}
+  player: {fileID: 1935445372}
+  musica: {fileID: 93991512}
 --- !u!1001 &982420912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15859,7 +15860,7 @@ MonoBehaviour:
   musica: {fileID: 0}
   player: {fileID: 1935445372}
   Bot1: {fileID: 0}
-  bot2: {fileID: 967140253}
+  bot2: {fileID: 0}
   menuManager: {fileID: 0}
   tuto: 0
 --- !u!114 &1397573253

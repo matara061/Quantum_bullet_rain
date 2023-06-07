@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Player player = null;
     public Bot1 bot1;
     public Bot2 bot2;
+    public Bot3 bot3;
     public AudioSource musica;
 
     public TextMeshProUGUI timeText;
@@ -38,6 +39,9 @@ public class GameManager : MonoBehaviour
         }else if (bot2 != null)
         {
             fase = 1;
+        }else if(bot3 != null)
+        {
+            fase = 3;
         }
 
 
@@ -57,6 +61,9 @@ public class GameManager : MonoBehaviour
         }else if(bot2 != null)
         {
             bossMorte = bot2.morreu;
+        }else if(bot3 != null)
+        {
+            bossMorte = bot3.morreu;
         }
 
         if(bossMorte)
