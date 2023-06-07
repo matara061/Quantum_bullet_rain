@@ -116,7 +116,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     private void OnParticleCollision(GameObject other)
     {
        
-       if (this.gameObject.layer == 6) // player esta tomando 2 hits ao mesmo tempo 
+       if (this.gameObject.layer == 6)  
         {
           if(!hit)
             {
