@@ -86,58 +86,42 @@ public class Bot3 : MonoBehaviour
                 }
                 else if (life <= 3700 & life > 3000)
                 {
-                    ataques[3].gameObject.SetActive(false);
-                    ataques[1].gameObject.SetActive(true);
-                    bombas[0].gameObject.SetActive(true);
-                    bombas[1].gameObject.SetActive(true);
+                    laisers[7].SetActive(false);
+                    laisers[6].SetActive(false);
+                    bombas[8].SetActive(true);
+                    bombas[9].SetActive(true);
+                    bombas[10].SetActive(true);
+                    bombas[11].SetActive(true);
                 }
             }
             else
             {
                 if (life > 2350) 
                 {
-                    ataques[1].gameObject.SetActive(false);
-                    bombas[0].gameObject.SetActive(false);
-                    bombas[1].gameObject.SetActive(false);
-                    bombas[2].gameObject.SetActive(true);
-                    bombas[3].gameObject.SetActive(true);
-                    bombas[4].gameObject.SetActive(true);
-                    bombas[5].gameObject.SetActive(true);
+                    bombas[8].SetActive(false);
+                    bombas[9].SetActive(false);
+                    bombas[10].SetActive(false);
+                    bombas[11].SetActive(false);
+                    ataques[6].SetActive(true);
+                    laisers[8].SetActive(true);
+                    laisers[9].SetActive(true);
+                    bombas[6].SetActive(true);
+                    bombas[7].SetActive(true);
                 }
-                else if (life <= 2350 & life > 2325)
+                else if (life <= 2350 & life > 2000)
                 {
-                    bombas[2].gameObject.SetActive(false);
-                    bombas[3].gameObject.SetActive(false);
-                    bombas[4].gameObject.SetActive(false);
-                    bombas[5].gameObject.SetActive(false);
-                    laisers[0].gameObject.SetActive(true);
-                }
-                else if (life <= 2325 & life > 2300)
-                {
-                    laisers[0].gameObject.SetActive(false);
-                    laisers[1].gameObject.SetActive(true);
-                }
-                else if (life <= 2300 & life > 2280)
-                {
-                    laisers[1].gameObject.SetActive(false);
-                    laisers[2].gameObject.SetActive(true);
-                }
-                else if (life <= 2280 & life > 2260)
-                {
-                    laisers[2].gameObject.SetActive(false);
-                    laisers[3].gameObject.SetActive(true);
-                }
-                else if (life <= 2260 & life > 2000)
-                {
-                    laisers[3].gameObject.SetActive(false);
-                    ataques[0].gameObject.SetActive(true);
-                    laisers[4].gameObject.SetActive(true);
-                    laisers[5].gameObject.SetActive(true);
+                    ataques[6].SetActive(false);
+                    laisers[8].SetActive(false);
+                    laisers[9].SetActive(false);
+                    bombas[6].SetActive(false);
+                    bombas[7].SetActive(false);
+                    ataques[7].SetActive(true);
+                    ataques[10].SetActive(true);
                 }
                 else if (life <= 2000 & life > 1200)
                 {
-                    laisers[6].gameObject.SetActive(true);
-                    laisers[7].gameObject.SetActive(true);
+                    ataques[7].SetActive(false);
+                    ataques[10].SetActive(false);
                 }
                 else if (life <= 1200 & life > 500)
                 {
