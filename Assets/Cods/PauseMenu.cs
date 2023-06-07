@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     public Bot2 bot2;
 
+    public Bot3 bot3;
+
     public MenuManager menuManager;
 
     public bool tuto = false;
@@ -50,6 +52,20 @@ public class PauseMenu : MonoBehaviour
         else if(bot2 != null)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !player.morreu && !bot2.morreu && !tuto)
+            {
+                if (GameIsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+            }
+        }
+        else if (bot3 != null)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && !player.morreu && !bot3.morreu && !tuto)
             {
                 if (GameIsPaused)
                 {
