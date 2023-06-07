@@ -1245,9 +1245,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1771673296}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: NextStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2270,9 +2270,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 1771673296}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: NextStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -56,6 +56,37 @@ public class GameOver : MonoBehaviour
                 Time.timeScale = 1f;
                 Cursor.visible = false;
                 SceneManager.LoadScene("SampleScene");
+            }else if(gameManager.fase==3)
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                SceneManager.LoadScene("Fase3");
+            }
+        }
+    }
+
+    public void NextStage()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if(gameManager != null)
+        {
+            if (gameManager.fase == 1)
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                SceneManager.LoadScene("SampleScene");
+            }
+            else if (gameManager.fase == 2)
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = false;
+                SceneManager.LoadScene("Fase3");
+            }
+            else if (gameManager.fase == 3)
+            {
+                Time.timeScale = 1f;
+                Cursor.visible = true;
+                SceneManager.LoadScene("Start");
             }
         }
     }
