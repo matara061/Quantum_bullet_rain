@@ -37,7 +37,13 @@ public class Bot3 : MonoBehaviour
             {
                 if (life <= 6000 & life > 5900)
                 {
-                    ataques[0].gameObject.SetActive(true);
+                    //ataques[0].gameObject.SetActive(true);
+                  /*  laisers[4].gameObject.SetActive(true);
+                    laisers[5].gameObject.SetActive(true);
+                    laisers[6].gameObject.SetActive(true);
+                    laisers[7].gameObject.SetActive(true);
+                    laisers[4].gameObject.SetActive(true);
+                    laisers[5].gameObject.SetActive(true);*/
 
                 }
                 else if (life <= 5900 & life > 5200)
@@ -46,7 +52,7 @@ public class Bot3 : MonoBehaviour
                     ataques[1].gameObject.SetActive(true);
                     ataques[2].gameObject.SetActive(true);
                 }
-                else if (life <= 5200 & life > 4600) // longo pacas
+                else if (life <= 5200 & life > 4600) 
                 {
                     ataques[1].gameObject.SetActive(false);
                     ataques[2].gameObject.SetActive(false);
@@ -68,7 +74,7 @@ public class Bot3 : MonoBehaviour
             }
             else
             {
-                if (life > 2350) // facil pacas
+                if (life > 2350) 
                 {
                     ataques[1].gameObject.SetActive(false);
                     bombas[0].gameObject.SetActive(false);
