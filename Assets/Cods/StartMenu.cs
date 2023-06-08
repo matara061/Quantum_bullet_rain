@@ -127,11 +127,11 @@ public class StartMenu : MonoBehaviour
 
     public void Fase2()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Fase3");
     }
 
     public void Fase3()
     {
-        SceneManager.LoadScene("Fase3");
+        SceneManager.LoadScene("SampleScene");
     }
 }

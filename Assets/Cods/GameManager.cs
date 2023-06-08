@@ -35,13 +35,13 @@ public class GameManager : MonoBehaviour
     {
         if (bot1 != null)
         {
-            fase = 2;
+            fase = 3;
         }else if (bot2 != null)
         {
             fase = 1;
         }else if(bot3 != null)
         {
-            fase = 3;
+            fase = 2;
         }
 
 

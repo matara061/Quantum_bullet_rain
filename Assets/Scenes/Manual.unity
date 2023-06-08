@@ -1001,14 +1001,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Este \xE9 um jogo bullet hell, um jogo onde a tela estara sempre cheia
-    de projeteis.\n\nO objetivo \xE9 evitar os projeteis do inimigo enquanto tenta
+  m_text: "Este \xE9 um jogo bullet hell, um jogo onde a tela estar\xE1 sempre cheia
+    de proj\xE9teis.\n\nO objetivo \xE9 evitar os projeteis do inimigo enquanto tenta
     se manter a frente dele para causar dano e eventualmente vencer a fase.\n\nO
-    jogador possui um total de tres vidas     e perdara uma toda vez que for atingido.\n\nO
-    jogador possui uma habilidade especial ativada ao ter no minimo uma estrela    
+    jogador possui um total de tr\xEAs vidas     e perdera uma toda vez que for atingido.\n\nO
+    jogador possui uma habilidade especial ativada ao ter no m\xEDnimo uma estrela    
     e apertar a tecla \"E\".\n\nMesmo que o jogador perca todas as vidas, o jogador
-    podera escolher continuir a fase de onde parou ao selecionar a op\xE7\xE3o \"Continuar\"
-    na tela de \"Fim de jogo\" (Isso afeta a nota final da fase)."
+    poder\xE1 escolher continuar a fase de onde parou ao selecionar a op\xE7\xE3o
+    \"Continuar\" na tela de \"Fim de jogo\" (Isso afeta a nota final da fase)."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4262,8 +4262,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: O icone da estrla esta sempre ao lado direito do jogador e representa o
-    numero de especiais restantes.
+  m_text: "O \xEDcone da estrela esta sempre ao lado direito do jogador e representa
+    o n\xFAmero de especiais restantes."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9037,8 +9037,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "O icone do cora\xE7\xE3o esta sempre ao lado direto da tela do jogador
-    e representa o numero de vidas restantes."
+  m_text: "O \xEDcone do cora\xE7\xE3o est\xE1 sempre ao lado direto da tela do jogador
+    e representa o n\xFAmero de vidas restantes."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13134,9 +13134,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: O icone de invencibilidade aparece do lado direito da tela quando o jogador
-    recebe dano ou apos reviver. Apos receber dano, representa 3 segundos de invencibilidade,
-    e apos reviver, 5 segundos.
+  m_text: "O \xEDcone de invencibilidade aparece do lado direito da tela quando o
+    jogador recebe dano ou ap\xF3s reviver. Ap\xF3s receber dano, representa 3 segundos
+    de invencibilidade, e ap\xF3s reviver, 5 segundos."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
