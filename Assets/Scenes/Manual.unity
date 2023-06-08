@@ -1354,8 +1354,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ao completar uma fase voce vera a tela de vitoria onde aparecera a sua
-    nota de desempenho. O desempenho \xE9 avaliado de acordo com a quantidade de
+  m_text: "Ao completar uma fase voc\xEA vera a tela de vit\xF3ria onde aparecera
+    a sua nota de desempenho. O desempenho \xE9 avaliado conforme a quantidade de
     mortes durante a partida."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5872,9 +5872,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Sempre que aparecer o item de estrela no cenario, \xE9 uma boa estrategia
-    usar o especial para pegar o item. Fasendo isso, voce pode repor a estrela que
-    acabou de usar e ainda aproveitar as vantagens do especial pelo tempo que restar."
+  m_text: "Sempre que aparecer o item de estrela no cen\xE1rio, \xE9 uma boa estrat\xE9gia
+    usar o especial para pegar o item. Fazendo isso, voc\xEA pode repor a estrela
+    que acabou de usar e ainda aproveitar as vantagens do especial pelo tempo que
+    restar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8292,8 +8293,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Em aguns momentos durante o jogo, aparecer\xE3o itens no cenario que desaparecer\xE3o
-    depois de alguns segundos.  "
+  m_text: "Em alguns momentos durante o jogo, aparecer\xE3o itens no cen\xE1rio que
+    desaparecer\xE3o depois de alguns segundos.  "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10277,9 +10278,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "N\xE3o hesite em usar a op\xE7\xE3o \"Continuar\" caso perca. Esta \xE9
-    uma fun\xE7\xE3o pensada para melhorar a mecanica do jogo e n\xE3o um modo \"facil\"
-    para quem n\xE3o conseguir."
+  m_text: "N\xE3o hesite em usar a op\xE7\xE3o \u201CContinuar\u201D caso perca.
+    Esta \xE9 uma fun\xE7\xE3o pensada para melhorar a mec\xE2nica do jogo e n\xE3o
+    um modo \u201Cf\xE1cil\u201D para quem n\xE3o conseguir."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

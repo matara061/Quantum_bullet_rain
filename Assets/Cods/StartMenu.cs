@@ -122,16 +122,19 @@ public class StartMenu : MonoBehaviour
 
     public void Fase1()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene("Fase1");
     }
 
     public void Fase2()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene("Fase3");
     }
 
     public void Fase3()
     {
+        Cursor.visible = false;
         SceneManager.LoadScene("SampleScene");
     }
 }

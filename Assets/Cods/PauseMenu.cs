@@ -114,9 +114,9 @@ public class PauseMenu : MonoBehaviour
 
     public void Desistir()
     {
-        SceneManager.LoadScene("Start");
         Time.timeScale = 1f;
         GameIsPaused = false;
+        SceneManager.LoadScene("Start");
     }
 
     public void Turorial()
