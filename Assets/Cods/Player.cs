@@ -25,6 +25,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public GameObject[] coracoes;
     public GameObject[] estrelas;
     public GameObject icon;
+    public GameObject icon2;
     public GameObject especial;
     public bool shild = false;
 
@@ -195,6 +196,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
             if (timeCount2 < 0)
             {
                 timeCount2 = 0;
+                icon2.gameObject.SetActive(false);
                 especial.gameObject.SetActive(false);
                 this.gameObject.layer = 6;
                 shild = false;
@@ -216,6 +218,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     {
         specialEffect.Play();
         especial.gameObject.SetActive(true);
+        icon2.gameObject.SetActive(true);
         this.gameObject.layer = 11;
         timeCount2 = 6;
     }
