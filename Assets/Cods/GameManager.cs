@@ -51,7 +51,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeCount += Time.deltaTime;
@@ -64,7 +63,7 @@ public class GameManager : MonoBehaviour
         if(bot1 != null)
         {
             bossMorte = bot1.morreu;
-            if (bot1.life <= 2350)
+            if (bot1.life <= 3000)
             {
                 som.SetActive(false);
                 som2.SetActive(true);
@@ -77,7 +76,7 @@ public class GameManager : MonoBehaviour
         else if(bot2 != null)
         {
             bossMorte = bot2.morreu;
-            if (bot2.life <= 2350)
+            if (bot2.life <= 3000)
             {
                 som.SetActive(false);
                 som2.SetActive(true);
@@ -91,7 +90,7 @@ public class GameManager : MonoBehaviour
         else if(bot3 != null)
         {
             bossMorte = bot3.morreu;
-            if (bot3.life <= 2350)
+            if (bot3.life <= 3000)
             {
                 som.SetActive(false);
                 som2.SetActive(true);
@@ -106,7 +105,6 @@ public class GameManager : MonoBehaviour
         if(bossMorte)
         {
             Time.timeScale = 0f;
-           // musica.Pause();
            PauseMusic();
         }
 
@@ -118,7 +116,6 @@ public class GameManager : MonoBehaviour
                 coracoes[i].SetActive(true);
             }
             Time.timeScale = 1f;
-           // musica.Play();
            PlayMusic();
             triger = false;
         }
@@ -136,11 +133,9 @@ public class GameManager : MonoBehaviour
         {
             coracoes[2].gameObject.SetActive(false);
             Time.timeScale = 0f;
-            // musica.Pause();
             PauseMusic();
             triger = true;
             SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
-           // Debug.Log("more");
         }
 
         if(player.numEstrelas >= 0)
@@ -163,7 +158,7 @@ public class GameManager : MonoBehaviour
     {
         if (bot1 != null)
         {
-            if(bot1.life <= 2350)
+            if(bot1.life <= 3000)
             {
                 musica2.Pause();
             }else
@@ -173,7 +168,7 @@ public class GameManager : MonoBehaviour
         }
         else if (bot2 != null)
         {
-            if (bot2.life <= 2350)
+            if (bot2.life <= 3000)
             {
                 musica2.Pause();
             }
@@ -184,7 +179,7 @@ public class GameManager : MonoBehaviour
         }
         else if (bot3 != null)
         {
-            if (bot3.life <= 2350)
+            if (bot3.life <= 3000)
             {
                 musica2.Pause();
             }
@@ -199,7 +194,7 @@ public class GameManager : MonoBehaviour
     {
         if (bot1 != null)
         {
-            if (bot1.life <= 2350)
+            if (bot1.life <= 3000)
             {
                 musica2.Play();
             }
@@ -210,7 +205,7 @@ public class GameManager : MonoBehaviour
         }
         else if (bot2 != null)
         {
-            if (bot2.life <= 2350)
+            if (bot2.life <= 3000)
             {
                 musica2.Play();
             }
@@ -221,7 +216,7 @@ public class GameManager : MonoBehaviour
         }
         else if (bot3 != null)
         {
-            if (bot3.life <= 2350)
+            if (bot3.life <= 3000)
             {
                 musica2.Play();
             }

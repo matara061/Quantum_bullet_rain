@@ -1048,7 +1048,11 @@ MonoBehaviour:
   player: {fileID: 477765564}
   bot1: {fileID: 669191548}
   bot2: {fileID: 0}
+  bot3: {fileID: 0}
   musica: {fileID: 462417245}
+  musica2: {fileID: 545852820}
+  som: {fileID: 462417243}
+  som2: {fileID: 545852818}
   timeText: {fileID: 662254620}
   timeCount: 0
   playerMortes: 0
@@ -1636,6 +1640,7 @@ Transform:
   - {fileID: 900276603}
   - {fileID: 211110869}
   - {fileID: 1820740473}
+  - {fileID: 545852819}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3504,7 +3509,6 @@ MonoBehaviour:
   icon: {fileID: 346566721}
   especial: {fileID: 1759682265}
   shild: 0
-  musica: {fileID: 462417245}
   specialEffect: {fileID: 415343486}
   pegaItem: {fileID: 211110870}
   dano: {fileID: 1820740474}
@@ -4390,6 +4394,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540187427}
   m_CullTransparentMesh: 1
+--- !u!1 &545852818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545852819}
+  - component: {fileID: 545852820}
+  m_Layer: 0
+  m_Name: bossMusica5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &545852819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545852818}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -604.3191, y: -256.02692, z: 2.121617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 202839675}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &545852820
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545852818}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 485b63af652ec9943b09533c67d23c93, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &548747654
 GameObject:
   m_ObjectHideFlags: 0
@@ -5286,7 +5418,6 @@ MonoBehaviour:
   hell: {fileID: 202418949}
   healthBar: {fileID: 868301864}
   player: {fileID: 477765564}
-  musica: {fileID: 462417245}
 --- !u!1 &674887574
 GameObject:
   m_ObjectHideFlags: 0
@@ -16348,7 +16479,9 @@ MonoBehaviour:
   player: {fileID: 477765564}
   Bot1: {fileID: 669191548}
   bot2: {fileID: 0}
+  bot3: {fileID: 0}
   menuManager: {fileID: 0}
+  gameManager: {fileID: 149917022}
   tuto: 0
 --- !u!114 &1598933623
 MonoBehaviour:
