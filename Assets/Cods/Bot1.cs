@@ -17,7 +17,7 @@ public class Bot1 : MonoBehaviour
     public BarraVida healthBar;
     public Player player;
 
-    public AudioSource musica;
+   // public AudioSource musica;
 
 
     // Start is called before the first frame update

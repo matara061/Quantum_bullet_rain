@@ -22,6 +22,8 @@ public class PauseMenu : MonoBehaviour
 
     public MenuManager menuManager;
 
+    public GameManager gameManager;
+
     public bool tuto = false;
 
 
@@ -92,13 +94,15 @@ public class PauseMenu : MonoBehaviour
         }
         Cursor.visible = false;
         Time.timeScale = 1f;
-        musica.Play();
+        // musica.Play();
+        gameManager.PlayMusic();
         GameIsPaused = false;
     }
 
     public void Pause()
     {
-        musica.Pause();
+       //musica.Pause();
+       gameManager.PauseMusic();
         Cursor.visible = true;
         if(menuManager.EN)
         {

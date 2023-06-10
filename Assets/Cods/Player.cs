@@ -28,7 +28,7 @@ public class Player : MonoBehaviour // player nao vai precisar clicar para atira
     public GameObject especial;
     public bool shild = false;
 
-    public AudioSource musica;
+    //public AudioSource musica;
     public AudioSource specialEffect;
     public AudioSource pegaItem;
     public AudioSource dano;

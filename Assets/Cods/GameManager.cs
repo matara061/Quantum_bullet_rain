@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     public Bot2 bot2;
     public Bot3 bot3;
     public AudioSource musica;
+    public AudioSource musica2;
+
+    public GameObject som;
+    public GameObject som2;
 
     public TextMeshProUGUI timeText;
     public float timeCount;
@@ -52,24 +56,58 @@ public class GameManager : MonoBehaviour
     {
         timeCount += Time.deltaTime;
         timeText.text = timeCount.ToString("F0");
+
+        
   
         playerMortes = player.mortes;
 
         if(bot1 != null)
         {
             bossMorte = bot1.morreu;
-        }else if(bot2 != null)
+            if (bot1.life <= 2350)
+            {
+                som.SetActive(false);
+                som2.SetActive(true);
+            }else
+            {
+                som2.SetActive(false);
+                som.SetActive(true);
+            }
+        }
+        else if(bot2 != null)
         {
             bossMorte = bot2.morreu;
-        }else if(bot3 != null)
+            if (bot2.life <= 2350)
+            {
+                som.SetActive(false);
+                som2.SetActive(true);
+            }
+            else
+            {
+                som2.SetActive(false);
+                som.SetActive(true);
+            }
+        }
+        else if(bot3 != null)
         {
             bossMorte = bot3.morreu;
+            if (bot3.life <= 2350)
+            {
+                som.SetActive(false);
+                som2.SetActive(true);
+            }
+            else
+            {
+                som2.SetActive(false);
+                som.SetActive(true);
+            }
         }
 
         if(bossMorte)
         {
             Time.timeScale = 0f;
-            musica.Pause();
+           // musica.Pause();
+           PauseMusic();
         }
 
         if(player.revive)
@@ -80,7 +118,8 @@ public class GameManager : MonoBehaviour
                 coracoes[i].SetActive(true);
             }
             Time.timeScale = 1f;
-            musica.Play();
+           // musica.Play();
+           PlayMusic();
             triger = false;
         }
 
@@ -97,7 +136,8 @@ public class GameManager : MonoBehaviour
         {
             coracoes[2].gameObject.SetActive(false);
             Time.timeScale = 0f;
-            musica.Pause();
+            // musica.Pause();
+            PauseMusic();
             triger = true;
             SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
            // Debug.Log("more");
@@ -117,6 +157,79 @@ public class GameManager : MonoBehaviour
             }
         }
         
+    }
+
+    public void PauseMusic()
+    {
+        if (bot1 != null)
+        {
+            if(bot1.life <= 2350)
+            {
+                musica2.Pause();
+            }else
+            {
+                musica.Pause();
+            }
+        }
+        else if (bot2 != null)
+        {
+            if (bot2.life <= 2350)
+            {
+                musica2.Pause();
+            }
+            else
+            {
+                musica.Pause();
+            }
+        }
+        else if (bot3 != null)
+        {
+            if (bot3.life <= 2350)
+            {
+                musica2.Pause();
+            }
+            else
+            {
+                musica.Pause();
+            }
+        }
+    }
+
+    public void PlayMusic()
+    {
+        if (bot1 != null)
+        {
+            if (bot1.life <= 2350)
+            {
+                musica2.Play();
+            }
+            else
+            {
+                musica.Play();
+            }
+        }
+        else if (bot2 != null)
+        {
+            if (bot2.life <= 2350)
+            {
+                musica2.Play();
+            }
+            else
+            {
+                musica.Play();
+            }
+        }
+        else if (bot3 != null)
+        {
+            if (bot3.life <= 2350)
+            {
+                musica2.Play();
+            }
+            else
+            {
+                musica.Play();
+            }
+        }
     }
 
     

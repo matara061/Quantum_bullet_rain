@@ -3241,7 +3241,11 @@ MonoBehaviour:
   player: {fileID: 1618794194}
   bot1: {fileID: 0}
   bot2: {fileID: 885676062}
+  bot3: {fileID: 0}
   musica: {fileID: 1467212262}
+  musica2: {fileID: 1143312963}
+  som: {fileID: 1467212260}
+  som2: {fileID: 1143312961}
   timeText: {fileID: 1624203936}
   timeCount: 0
   playerMortes: 0
@@ -6270,7 +6274,6 @@ MonoBehaviour:
   hell: {fileID: 1364427750}
   healthBar: {fileID: 1737813601}
   player: {fileID: 1618794194}
-  musica: {fileID: 1467212262}
 --- !u!1 &890394317
 GameObject:
   m_ObjectHideFlags: 0
@@ -6991,6 +6994,7 @@ Transform:
   - {fileID: 475511575}
   - {fileID: 1256403196}
   - {fileID: 939149409}
+  - {fileID: 1143312962}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13516,7 +13520,9 @@ MonoBehaviour:
   player: {fileID: 1618794194}
   Bot1: {fileID: 0}
   bot2: {fileID: 885676062}
+  bot3: {fileID: 0}
   menuManager: {fileID: 0}
+  gameManager: {fileID: 508997569}
   tuto: 0
 --- !u!114 &1114480317
 MonoBehaviour:
@@ -13775,6 +13781,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140628089}
   m_CullTransparentMesh: 1
+--- !u!1 &1143312961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143312962}
+  - component: {fileID: 1143312963}
+  m_Layer: 0
+  m_Name: bossMusica4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1143312962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143312961}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -604.3191, y: -256.02692, z: 2.121617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 964344633}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1143312963
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143312961}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 174f3f59a2b7844438d6524a76b7ffc3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1147747990 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4543400432915115080, guid: 0c43cbae9fac55d449c32aab08dd5d7c, type: 3}
@@ -18169,7 +18303,6 @@ MonoBehaviour:
   icon: {fileID: 830773914}
   especial: {fileID: 1097883544}
   shild: 0
-  musica: {fileID: 1467212262}
   specialEffect: {fileID: 850331291}
   pegaItem: {fileID: 1256403197}
   dano: {fileID: 939149410}
